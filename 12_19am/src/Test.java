@@ -1,3 +1,7 @@
+import java.util.Hashtable;
+import java.util.Map;
+import java.util.Stack;
+
 /**
  * @ClassName $申先生
  * @Description days
@@ -59,4 +63,61 @@ class Solution2 {
         return str1;
     }
 }
+class Solution3 {
+    //给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
+    //
+    //有效字符串需满足：
+    //
+    //    左括号必须用相同类型的右括号闭合。
+    //    左括号必须以正确的顺序闭合。
+    //
+    //来源：力扣（LeetCode）
+    //链接：https://leetcode-cn.com/problems/valid-parentheses
+    //著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    public boolean isValid(String s) {
+        Stack<Character> stack = new Stack<>();//用栈进行判断
+        for(char c : s.toCharArray()){         //如果c是左括号，则插入一个右括号
+            if(c == '(')stack.push(')'); //如果c是右括号，则判断栈中是否有与其匹配的，若没有，则说明括号匹配错误
+            else if(c == '{')stack.push('}');//如果栈已经空了，而c还有字符则也说明括号匹配错误
+            else if(c == '[')stack.push(']');
+            else if(stack.isEmpty() || c !=stack.pop())return false;
+        }
+        return stack.isEmpty();
+    }
+}
+class Solution4 {
+    public int removeDuplicates(int[] nums) {
+        Map<Integer,Integer>hashtable = new Hashtable<Integer,Integer>();
+        int i = 0;
+        int k = 0;
+        while(i < nums.length) {
+            if(!hashtable.containsValue(nums[i])) {
+                hashtable.put(k, nums[i]);
+                k++;
+            }
+            i++;
+        }
+        int j = 0;
+        int size = hashtable.size();
+        while(size > 0) {
+            nums[j] = hashtable.get(j);
+            j++;
+            size--;
+        }
+         return j;
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        Solution4 solution4 = new Solution4();
+        int []arr = {1,1,2};
+        int a = solution4.removeDuplicates(arr);
+        System.out.println(a);
+        /*Map<Integer,Integer>hashtable = new Hashtable<Integer,Integer>();
+        hashtable.put(1,6);
+        hashtable.put(2,7);
+        System.out.println(hashtable.get(1));
+        System.out.println(hashtable.get(2));*/
 
+    }
+}
