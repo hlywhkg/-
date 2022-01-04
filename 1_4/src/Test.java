@@ -4,6 +4,44 @@
  * @date 2022/1/4 10:27
  * @Version 1.0
  */
+class Solution4 {
+    public String addBinary(String a, String b) {
+        //给你两个二进制字符串，返回它们的和（用二进制表示）。
+        //
+        //输入为 非空 字符串且只包含数字 1 和 0。
+        //来源：力扣（LeetCode）
+        //链接：https://leetcode-cn.com/problems/add-binary
+        //著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+         StringBuffer buf = new StringBuffer();
+         int ans = 0;
+        for (int i = a.length() - 1,j = b.length() - 1; i >= 0 || j >= 0 ; i--,j--) {
+            int sum = ans;
+            sum += i >= 0 ? a.charAt(i) - '0': 0;
+            sum += j >= 0 ? b.charAt(j) - '0': 0;
+            buf.append(sum %2);
+            ans = sum / 2;
+        }
+        if(ans != 0){
+            buf.append(1);
+        }
+        return buf.reverse().toString();//stringBuffer 不能直接强转String ,这个toString简直绝绝子
+    }
+}
+class Solution3 {
+    public int[] plusOne(int[] digits) {
+        int len = digits.length ;
+        for (int i = len-1; i >= 0; i--) {//这个等于很关键 可能出现 各位数的情况
+            digits[i]++;//先直接加1，后续判断
+            digits[i] %=10;
+            if(digits[i] != 0){//如果不等于0 说明没有出现 99 这种进1 变为100 的情况
+                return digits;
+            }
+        }
+        digits = new int[len+1];// 99 + 1 = 100
+        digits[0] = 1;//第一位为1 ，后续全为0.
+        return digits;
+    }
+}
 
 class Solution2 {
     //给你一个字符串 s，由若干单词组成，单词前后用一些空格字符隔开。返回字符串中最后一个单词的长度。
@@ -18,6 +56,7 @@ class Solution2 {
         return str[str.length-1].length();
     }
 }
+
 class Solution1 {
     public int maxSubArray(int[] nums) {
         //给你一个整数数组 nums ，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
@@ -54,4 +93,7 @@ class Solution1 {
     }
 }
 public class Test {
+    public static void main(String[] args) {
+        System.out.println(1%2);
+    }
 }
