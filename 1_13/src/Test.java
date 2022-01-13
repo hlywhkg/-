@@ -1,9 +1,61 @@
+import java.util.Hashtable;
+import java.util.Map;
+
 /**
  * @ClassName $申先生
  * @Description days
  * @date 2022/1/13 11:40
  * @Version 1.0
  */
+class Solution7 {
+    //给你一个整数 n ，请你判断 n 是否为 丑数 。如果是，返回 true ；否则，返回 false 。
+    //
+    //丑数 就是只包含质因数 2、3 和/或 5 的正整数。
+    //来源：力扣（LeetCode）
+    //链接：https://leetcode-cn.com/problems/ugly-number
+    //著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    public boolean isUgly(int n) {
+        if(n <= 0)return false;
+        while(n % 2 == 0)n /= 2;
+        while(n % 3 == 0)n /= 3;
+        while(n % 5 == 0)n /= 5;
+        return n == 1;
+    }
+}
+class Solution6 {
+    //编写一个算法来判断一个数 n 是不是快乐数。
+    //
+    //「快乐数」定义为：
+    //
+    //    对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和。
+    //    然后重复这个过程直到这个数变为 1，也可能是 无限循环 但始终变不到 1。
+    //    如果 可以变为  1，那么这个数就是快乐数。
+    //
+    //如果 n 是快乐数就返回 true
+    //
+    //来源：力扣（LeetCode）
+    //链接：https://leetcode-cn.com/problems/happy-number
+    //著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    public int becomeNext(int n){
+        int sum = 0;
+        while(n > 0){
+            int a = n % 10;
+            sum += a * a;
+            n = n / 10;
+        }
+        return sum;
+    }
+    public boolean isHappy(int n){
+        //快慢指针
+        int slow = n,fast = n;
+        do {
+            slow = becomeNext(slow);
+            fast = becomeNext(fast);
+            fast = becomeNext(fast);
+        }while (slow != fast);
+        return slow == 1;
+    }
+}
 class Solution5 {
     //句子 是一个单词列表，列表中的单词之间用单个空格隔开，且不存在前导或尾随空格。每个单词仅由大小写英文字母组成（不含标点符号）。
     //
@@ -158,7 +210,12 @@ public class Test {
         float a = x / y;*/
         /*int i = -3;
         i = ++(i++);*/
-        Solution5 solution5 = new Solution5();
-        solution5.truncateSentence("hello world you are right",4);
+        /*Solution5 solution5 = new Solution5();
+        solution5.truncateSentence("hello world you are right",4);*/
+        /*Double o1 = true ? new Integer(1):new Double(2.0);*/
+        /*System.out.println(14^3);*/
+        byte a = 127,b = 126;
+        b += a;
+        System.out.println(1/4);
     }
 }
