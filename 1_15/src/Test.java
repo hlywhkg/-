@@ -1,5 +1,4 @@
-import java.util.Stack;
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * @ClassName $申先生
@@ -7,6 +6,63 @@ import java.util.ArrayList;
  * @date 2022/1/15 10:21
  * @Version 1.0
  */
+class Solution9 {
+    //给定一个整数数组，判断是否存在重复元素。
+    //
+    //如果存在一值在数组中出现至少两次，函数返回 true 。如果数组中每个元素都不相同，则返回 false 。
+    //
+    //
+    //
+    //示例 1:
+    //
+    //输入: [1,2,3,1]
+    //输出: true
+    //
+    //示例 2:
+    //
+    //输入: [1,2,3,4]
+    //输出: false
+    //来源：力扣（LeetCode）
+    //链接：https://leetcode-cn.com/problems/contains-duplicate
+    //著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    public boolean containsDuplicate(int[] nums) {
+        Set<Integer> set = new HashSet<Integer>();
+        for (int x : nums) {
+            if (!set.add(x)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+class Solution8 {
+    //给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。
+    //示例 1：
+    //
+    //输入：head = [1,2,3,4,5]
+    //输出：[5,4,3,2,1]
+    //来源：力扣（LeetCode）
+    //链接：https://leetcode-cn.com/problems/reverse-linked-list
+    //著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class ListNode {
+      int val;
+      ListNode next;
+      ListNode() {}
+      ListNode(int val) { this.val = val; }
+      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
+    public ListNode reverseList(ListNode head) {
+        ListNode cur = null;
+        ListNode prev = head;
+        while(prev != null){
+            ListNode next = prev.next;
+            prev.next = cur;
+            cur = prev;
+            prev = next;
+        }
+        return cur;
+    }
+}
 class Solution7 {
     //给定 s 和 t 两个字符串，当它们分别被输入到空白的文本编辑器后，请你判断二者是否相等。# 代表退格字符。
     //
@@ -236,4 +292,10 @@ class Solution1 {
     }
 }
 public class Test {
+    public static void main(String[] args) {
+        int i = 1;
+        i = i++;
+        System.out.println(i);
+    }
+
 }
