@@ -8,8 +8,7 @@ package demo1;
 
 
 import javax.swing.tree.TreeNode;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 class myTreeNode{
     int val;
@@ -32,6 +31,40 @@ public class myTree {
 
     public myTree(myTreeNode root) {
         this.root = root;
+    }
+
+    void levelOrder(myTreeNode root){//层序遍历
+        if(root == null)return;
+        Queue<myTreeNode>queue = new ArrayDeque<>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            myTreeNode ret = queue.poll();
+            System.out.println(ret.val +" ");
+            if(ret.left!=null) {
+                queue.add(ret.left);
+            }
+            if(ret.right!=null) {
+                queue.add(ret.right);
+            }
+        }
+    }
+    int i = 0;
+    myTreeNode create(String str){
+        myTreeNode root = null;
+        int size = str.length();
+        if(i < size) {
+            String s1 = str.substring(i, i + 1);
+            int s = Integer.parseInt(s1);
+            if (s != 0) {
+                root = new myTreeNode(s);
+                i++;
+                root.left = create(str);
+                root.right = create(str);
+            } else {
+                i++;
+            }
+        }
+        return root;
     }
 
     void preOrderStr(myTreeNode root){//先序遍历
@@ -237,5 +270,13 @@ public class myTree {
         myTree.inOrderTrav(root);
         System.out.println("=========================");
         myTree.PostOrderTrav(root);
+        System.out.println("=========================");
+        myTree.levelOrder(root);
+        System.out.println("=========================");
+        myTreeNode myTreeNode = myTree.create("1234000506000");
+        myTree myTree1 = new myTree(myTreeNode);
+        myTree1.preOrderStr(myTreeNode);
+        System.out.println("========================");
+        myTree1.PostOrderTrav(myTreeNode);
     }
 }
