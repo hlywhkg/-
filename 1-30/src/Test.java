@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.Map;
 
@@ -98,14 +99,28 @@ class Solution1 {
 }
 public class Test {
     Test test = new Test();
-    public static int fun(){
+
+    public static int fun() {
+        Test test = new Test();
         test.func();
         return 1;
     }
-    public void func(){
+
+    public void func() {
         System.out.println(1);
     }
+
     public static void main(String[] args) {
+        Map<String,Integer>map = new Hashtable<>();
+        map.keySet();
         Test test = new Test();
+        String s = "word hello yes";
+        String s2 = "how are you";
+        String s3[] = (s +" " +s2).split(" ");
+        System.out.println(s3);
+        char[] arr = s.toCharArray();
+        String []str = s.split(" ");
+        System.out.println(Arrays.toString(str));
+        System.out.println(Arrays.toString(arr));
     }
 }
