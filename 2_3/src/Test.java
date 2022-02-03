@@ -4,8 +4,151 @@
  * @date 2022/2/3 10:17
  * @Version 1.0
  */
-import java.util.Map;
-import java.util.HashMap;
+import javax.swing.tree.TreeNode;
+import java.util.*;
+import java.util.Queue;
+import java.util.ArrayList;
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+import java.util.ArrayList;
+import java.util.Queue;
+
+ //Definition for a binary tree node.
+ class BtNode {
+     int val;
+     BtNode left;
+     BtNode right;
+     BtNode(int x) { val = x; }
+  }
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution6 {
+    public List<List<Integer>> levelOrder(BtNode root) {
+        List<List<Integer>>list = new ArrayList<>();
+        if(root == null)return list;
+        Queue<BtNode>queue = new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            LinkedList<Integer>list2 = new LinkedList<>();
+            for(int i = queue.size(); i > 0; i--){
+                BtNode ret = queue.poll();
+                if(list.size() % 2 == 0)list2.addLast(ret.val);
+                else list2.addFirst(ret.val);
+                if(ret.left != null)queue.add(ret.left);
+                if(ret.right != null)queue.add(ret.right);
+            }
+            list.add(list2);
+        }
+        return list;
+    }
+}
+class Solution5 {
+    //深度优先遍历容器板
+    //从上到下按层打印二叉树，同一层的节点按从左到右的顺序打印，每一层打印到一行。
+    //
+    //
+    //
+    //例如:
+    //给定二叉树: [3,9,20,null,null,15,7],
+    //
+    //    3
+    //   / \
+    //  9  20
+    //    /  \
+    //   15   7
+    //
+    //返回其层次遍历结果：
+    //
+    //[
+    //  [3],
+    //  [9,20],
+    //  [15,7]
+    //]
+    //
+    //来源：力扣（LeetCode）
+    //链接：https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof
+    //著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    List<List<Integer>>list = new ArrayList<>();
+    public List<List<Integer>> levelOrder(BtNode root) {
+        if(root == null)return list;
+        Queue<BtNode>queue = new ArrayDeque<>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            List<Integer>list2 = new ArrayList<Integer>();
+            int size = queue.size();
+            while(size > 0){
+                BtNode ret = queue.poll();
+                if(ret != null){
+                    list2.add(ret.val);
+                }
+                if(ret.left != null)queue.add(ret.left);
+                if(ret.right != null)queue.add(ret.right);
+                size--;
+            }
+            list.add(list2);
+        }
+        return list;
+    }
+}
+class Solution4 {
+    //从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。
+    //
+    //
+    //
+    //例如:
+    //给定二叉树: [3,9,20,null,null,15,7],
+    //
+    //    3
+    //   / \
+    //  9  20
+    //    /  \
+    //   15   7
+    //
+    //返回：
+    //
+    //[3,9,20,15,7]
+    //
+    //来源：力扣（LeetCode）
+    //链接：https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-lcof
+    //著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    public int[] levelOrder(BtNode root) {
+        if(root == null)return new int[0];
+        ArrayList<BtNode>list = new ArrayList<>();
+        Queue<BtNode>queue = new ArrayDeque<>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            BtNode ret = queue.poll();
+            list.add(ret);
+            if(ret != null){
+                if(ret.left!=null){
+                    queue.add(ret.left);
+                }
+                if(ret.right != null){
+                    queue.add(ret.right);
+                }
+            }
+        }
+        int []ans = new int[list.size()];
+        for(int i = 0; i < list.size(); i++){
+            ans[i] = list.get(i).val;
+        }
+        return ans;
+    }
+}
 class Solution3 {
     //在字符串 s 中找出第一个只出现一次的字符。如果没有，返回一个单空格。 s 只包含小写字母。
     //
@@ -106,8 +249,37 @@ class Solution1 {
     }
 }
 public class Test {
+    public List<List<Integer>> levelOrder(BtNode root) {
+        List<List<Integer>>list = new ArrayList<>();
+        if(root == null)return list;
+        Queue<BtNode>queue = new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            LinkedList<Integer>list2 = new LinkedList<>();
+            for(int i = 0; i < queue.size(); i++){
+                BtNode ret = queue.poll();
+                if(list.size() % 2 == 1)list2.addLast(ret.val);
+                else list2.addFirst(ret.val);
+                if(ret.left != null)queue.add(ret.left);
+                if(ret.right != null)queue.add(ret.right);
+            }
+            list.add(list2);
+        }
+        return list;
+    }
     public static void main(String[] args) {
-        String s = " fjahskgvaljbakl";
+        /*String s = " fjahskgvaljbakl";
         char c[] = s.toCharArray();
+        Queue<Integer>list = new ArrayDeque<>();
+        ArrayList<Integer>arr = new ArrayList<>();
+        LinkedList<Integer>list2 = new LinkedList<>();
+        list2.addFirst(1);
+        list2.addFirst(2);
+        list2.addFirst(3);
+        list2.addFirst(4);
+        list2.addFirst(5);
+        System.out.println(list2);*/
+        List<List<Integer>>list = new ArrayList<>();
+        System.out.println(list.size());//一开始为0
     }
 }
