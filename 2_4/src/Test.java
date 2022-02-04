@@ -22,7 +22,35 @@ class BtNode {
         val = x;
     }
 }
-
+/**
+ * Definition for binary tree
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public BtNode creat(int []pre,int pre_begin,int pre_end,int []vin,int vin_begin,int vin_end){
+        if(pre_begin > pre_end || vin_begin > vin_end){
+            return null;
+        }
+        BtNode root = new BtNode(pre[pre_begin]);
+        for(int i = vin_begin; i <=vin_end; i++){
+            if(pre[pre_begin] == vin[i]){
+                root.left = creat(pre,pre_begin+1,i-vin_begin+pre_begin,vin,vin_begin,i-1);
+                root.right = creat(pre,i-vin_begin+pre_begin+1,pre_end,vin,i+1,vin_end);
+                break;
+            }
+        }
+        return root;
+    }
+    public BtNode reConstructBinaryTree(int [] pre,int [] vin) {
+        if(pre.length == 0 || vin.length == 0)return null;
+        return creat(pre,0,pre.length-1,vin,0,vin.length-1);
+    }
+}
 class Solution3 {
     //请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。
     //
