@@ -16,7 +16,9 @@ public class demo11 {
                 increase();
             }
         });
+
         t1.start();
+
         Thread t2 = new Thread(() -> {
             for (int i = 0; i < 50000; i++) {
                 increase();
