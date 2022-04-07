@@ -10,7 +10,7 @@ public class demo6 {
         Thread t = new Thread(() ->{
             System.out.println("hello");
         });
-        t.start();
-        System.out.println(1_000_000);
+        //t.start();
+        t.run();
     }
 }

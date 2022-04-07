@@ -6,7 +6,7 @@
  */
 
 public class demo7 {
-    private static final long count = 100_0000_0000l;
+    private static final long count = 1000_0000l;
     public static void serial(){
         long begin = System.currentTimeMillis();
         long a = 0;
@@ -46,6 +46,6 @@ public class demo7 {
     }
     public static void main(String[] args) throws InterruptedException {
         serial();
-        //current();
+        current();
     }
 }

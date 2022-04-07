@@ -28,5 +28,6 @@ public class demo8 {
             }
         },"thread t2");
         t2.start();
+        System.out.println("?????????");
     }
 }
