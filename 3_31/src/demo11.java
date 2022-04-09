@@ -7,7 +7,7 @@
 
 public class demo11 {
     public static int count = 0;
-    synchronized public static void increase(){
+    public static void increase(){
         count++;
     }
     public static void main(String[] args) throws InterruptedException {
