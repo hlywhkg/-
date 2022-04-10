@@ -24,5 +24,6 @@ public class demo19 {
         Scanner scan = new Scanner(System.in);
         isQuit = scan.nextInt();
         System.out.println("main线程结束~~");
+
     }
 }
