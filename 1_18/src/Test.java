@@ -140,9 +140,9 @@ public class Test {
             return ret;
         }
         return null;
-    }
+    }*/
 
-    boolean isCompleteTree(TreeNode root) {//是否是完全二叉树
+    /*boolean isCompleteTree(TreeNode root) {//是否是完全二叉树
         if (root == null) return true;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);

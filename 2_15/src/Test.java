@@ -6,6 +6,8 @@
  */
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Set;
+
 class ListNode {
     int val;
     ListNode next;
@@ -16,6 +18,33 @@ class ListNode {
     }
 }
 class Solution {
+    //判断一个字符串是否被包含在一个单词字典当中
+    public boolean wordBreak(String s, Set<String> dict) {
+        boolean flg[] = new boolean[s.length()];
+        flg[0] = true;
+        for(int i = 1 ; i <= s.length() ; i++){
+            for(int j = i - 1; j >= 0 ; j--){
+                if(flg[j] && dict.contains(s.substring(j,i))){
+                    flg[i] = true;
+                    break;
+                }
+            }
+        }
+        return flg[s.length() - 1];
+    }
+}
+class solution3{
+    public int func(int a){
+        int dp[] = new int[a];
+        dp[0] = 0;
+        dp[1] = 1;
+        for(int i = 2; i < a; i++){
+            dp[i] = dp[i-1]+dp[i-2];
+        }
+        return dp[a-1];
+    }
+}
+class Solution2 {
     //相交的两个链表的第一个公共节点
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode p1 = headA;
@@ -115,5 +144,8 @@ class Solution1 {
 public class Test {
     public static void main(String[] args) {
         String.valueOf("1");
+        String str = "abc";
+        String str2 = str.substring(1,2);
+        System.out.println(str2);
     }
 }

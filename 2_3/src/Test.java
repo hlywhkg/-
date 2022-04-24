@@ -281,5 +281,8 @@ public class Test {
         System.out.println(list2);*/
         List<List<Integer>>list = new ArrayList<>();
         System.out.println(list.size());//一开始为0
+        int []arr = new int[10];
+        int a = 3 * 4 * arr[0];
+        arr[3] = 3 * 5 + 7 + 9 * 10;
     }
 }

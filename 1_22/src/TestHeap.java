@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * @ClassName $申先生
  * @Description days
@@ -49,6 +51,17 @@ public class TestHeap {
     public int peek(){
         int tmp = elem[0];
         return tmp;
+    }
+
+    public void heapSort(){
+        int length = elem.length -1;
+        while(length > 0){
+            int tmp = elem[0];
+            elem[0] = elem[length];
+            elem[length] = tmp;
+            shiftDown(0,length);
+            length --;
+        }
     }
 
     public boolean isEmpty(){

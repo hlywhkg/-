@@ -14,7 +14,24 @@ class Person{
 class Student extends Person{
 
 }
-
+/*class Solution3 {
+    public Node copyRandomList(Node head) {
+        HashMap<Node,Node>map = new HashMap<>();
+        Node cur = head;
+        while(cur != null){
+            Node node = new Node(cur.val);
+            map.put(cur,node);
+            cur = cur.next;
+        }
+        cur = head;
+        while(cur != null){
+            map.get(cur).next = map.get(cur.next);
+            map.get(cur).random = map.get(cur.random);
+            cur = cur.next;
+        }
+        return map.get(head);
+    }
+}*/
 public class Test {
     //key是关键字  value是出现的次数
     public static Set<Integer> func2(int[] array) {
@@ -63,6 +80,12 @@ public class Test {
         }
         Map<Integer,Integer> map = func1(array);
         System.out.println(map);
+        char a = 'a';
+        char c = Character.toUpperCase(a);
+        System.out.println(c);
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
+        System.out.println();
     }
     public static Object[] array = new Object[10];
 
