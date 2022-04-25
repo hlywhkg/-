@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="64104708-fdb1-46ee-aa5f-1738ec44af0c" name="Changes" comment="2_19">
+      <change afterPath="$PROJECT_DIR$/../1-30/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1-30/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1-30/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1-30/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1-30/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1-30/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1-30/1-30.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_18/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_18/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_18/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_18/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_18/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_18/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_18/1_18.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_19/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_19/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_19/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_19/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_19/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_19/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_19/1_19.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_20/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_20/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_20/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_20/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_20/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_20/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_20/1_20.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_21/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_21/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_21/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_21/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_21/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_21/1_21.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_22/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_22/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_22/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_22/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_22/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_22/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_22/1_22.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_22/src/Sort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_22/src/topK.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_23/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_23/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_23/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_23/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_23/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_23/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_23/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_23/1_23.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_24/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_24/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_24/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_24/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_24/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_24/1_24.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_25/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_25/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_25/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_25/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_25/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_25/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_25/1_25.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_28/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_28/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_28/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_28/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_28/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_28/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_28/1_28.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_29/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_29/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_29/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_29/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_29/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_29/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_29/1_29.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_31/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_31/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_31/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_31/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_31/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_31/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_31/1_31.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1_31/src/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2-14/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2-14/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2-14/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2-14/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2-14/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2-14/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2-14/2-14.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_11/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_11/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_11/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_11/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_11/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_11/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_11/2_11.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_12/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_12/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_12/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_12/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_12/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_12/2_12.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_12/src/2-12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_13/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_13/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_13/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_13/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_13/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_13/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_13/2_13.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_15/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_15/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_15/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_15/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_15/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_15/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_15/2_15.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_16/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_16/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_16/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_16/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_16/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_16/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_16/2_16.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_17/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_17/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_17/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_17/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_17/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_17/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_17/2_17.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_17/src/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_17/src/无标题.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_18/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_18/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_18/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_18/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_18/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_18/2_18.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2_19.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_3/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_3/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_3/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_3/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_3/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_3/2_3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_4/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_4/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_4/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_4/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_4/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_4/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_4/2_4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_5/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_5/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_5/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_5/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_5/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_5/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_5/2_5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/untitled.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1_18/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../1_18/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1_19/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../1_19/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1_22/src/TestHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../1_22/src/TestHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2_15/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../2_15/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2_3/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../2_3/src/Test.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="25J4OGe03xWROEJFFJD5qAJ0CqR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <module name="2_19" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="64104708-fdb1-46ee-aa5f-1738ec44af0c" name="Changes" comment="" />
+      <created>1645231824030</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1645231824030</updated>
+    </task>
+    <task id="LOCAL-00001" summary="2_19">
+      <created>1645244725524</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1645244725524</updated>
+    </task>
+    <task id="LOCAL-00002" summary="2_19">
+      <created>1645272404682</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1645272404682</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="2_19" />
+    <option name="LAST_COMMIT_MESSAGE" value="2_19" />
+  </component>
+</project>
