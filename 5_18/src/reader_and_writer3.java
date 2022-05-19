@@ -117,7 +117,7 @@ class writer implements Runnable{
 }
 
 class Main{
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         reader_and_writer3 wr = new reader_and_writer3();
         new Thread(new writer(wr)).start();
         new Thread(new reader(wr)).start();
@@ -125,5 +125,8 @@ class Main{
         new Thread(new reader(wr)).start();
         new Thread(new reader(wr)).start();
         new Thread(new writer(wr)).start();
+        Thread t = new Thread(new reader(wr));
+        Thread.sleep(4000);
+        t.start();
     }
 }
