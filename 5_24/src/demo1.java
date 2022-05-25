@@ -10,6 +10,7 @@ import java.util.LinkedList;
 
 import java.util.LinkedList;
 
+
 class LRU {
     public void L(int[] seq,int pages){
         int page_break = 0;// 断页次数
@@ -37,6 +38,7 @@ class LRU {
     }
 }
 
+
 class FIFO {
     public void F(int[] seq,int pages) {
         int page_break = 0;// 断页次数
@@ -45,7 +47,7 @@ class FIFO {
             if (list.contains(seq[i])) {// 如果即将访问的序列在物理块中，直接跳过
                 continue;
             } else {// 如果即将访问的序列不在物理块中，添加到物理块中；如果满了，找到最久不被访问的序列，并删除替换
-                if(list.size()!=pages) {
+                if(list.size() != pages) {
                     list.addLast(seq[i]);// 该方法表示将指定的元素追加到此列表的末尾
                     page_break++;//访问序列不存在，断页加一
                 }else {
@@ -59,6 +61,7 @@ class FIFO {
         System.out.println("断页次数：" + page_break + "\n断页中断率：" + page_break * 1.0 / seq.length);
     }
 }
+
 
 
 class OPT {
@@ -87,7 +90,7 @@ class OPT {
     //此方法主要是寻找需要替换的序列号，参数分别表示为访问序列号，物理块所装的序列号，当前要访问的序列号
     //temp和new_list均为静态变量，因为在进行下一次的调用时，上一次的值会保留下来，这样有利于比较值的大小
     public static int index(int[] seq, LinkedList<Integer> list, int num) {
-        int value=0;//定义返回值
+        int value = 0;//定义返回值
         //该for循环主要是添加当前访问序列之后的所有序列号，每次调用该方法，前一次的数据会被清空，再添加相应的元素
         for (int j = num + 1; j < seq.length; j++) {
             new_list.add(seq[j]);
@@ -96,15 +99,15 @@ class OPT {
         for (int k = 0; k < list.size(); k++) {
             if (new_list.indexOf(list.get(k)) != -1) {//如果能在当前序列号之后的元素中找到相应的的元素
                 int flag = new_list.indexOf(list.get(k));//用flag记下它的下标
-                if(temp<flag) {//如果temp小于flag，则表明它离当前访问序列号越远，也就是要被淘汰的，赋值给temp
-                    temp=flag;
+                if(temp < flag) {//如果temp小于flag，则表明它离当前访问序列号越远，也就是要被淘汰的，赋值给temp
+                    temp = flag;
                 }
-                if(k==list.size()-1) {//如果到末尾了，将最后所比的值赋值给value
-                    value=new_list.get(temp);
+                if(k == list.size() - 1) {//如果到末尾了，将最后所比的值赋值给value
+                    value = new_list.get(temp);
                 }
             }else {//如果不能在当前序列号之后的元素中找到相应的的元素
-                value=list.get(k);//直接获得需要替换的值
-                temp=0;//令temp=0；恢复初始值
+                value = list.get(k);//直接获得需要替换的值
+                temp = 0;//令temp=0；恢复初始值
                 new_list.clear();//清空new_list，恢复初始值
                 return value;
             }
