@@ -1,5 +1,4 @@
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @ClassName $申先生
@@ -8,7 +7,6 @@ import java.util.Set;
  * @Version 1.0
  */
 
-import java.util.Scanner;
 class Main{
     public static void main(String args[]){
         Scanner scan = new Scanner(System.in);
@@ -55,6 +53,26 @@ class Main{
 
 public class test {
     public static void main(String[] args) {
-        Set<Character> set = new HashSet<>();
+        //Set<Character> set = new HashSet<>();
+        String str = new String("hell>@$osd*emv");
+        str = str.replace(str.charAt(1),(char)(str.charAt(1) - 32));
+        System.out.println(str);
+        String regex = "[^a-zA-Z]";
+        //str = str.replaceAll(regex,str);
+        String str1[] = str.split(regex);
+        System.out.println(Arrays.toString(str1));
+        System.out.println(str1.length);
+        for (int i = 0; i < str1.length; i++) {
+            if(str1[i].equals("")){
+                System.out.println("i am null");
+            }
+        }
+        //System.out.println(str);
+        StringBuilder sb = new StringBuilder("123 ");
+        sb.delete(sb.length()-1,sb.length());
+        System.out.print(sb);
+        System.out.print("l");
+        List list = new LinkedList();
+
     }
 }
