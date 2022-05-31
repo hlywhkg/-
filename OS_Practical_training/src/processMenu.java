@@ -128,7 +128,7 @@ public class processMenu {
                     link.addLast(jcb.get(k));
                     k++;
                 } else {
-                    break;//如果该进程还未入队，即先结束遍历，保留当前下标k值，注意：此处不要k--；
+                    break;//如果该进程还未入队，即先结束遍历，保留当前下标k值
                 }
             }
             /**
@@ -167,12 +167,12 @@ public class processMenu {
                 nowProcess.aveRoundTime = (double) nowProcess.roundTime / nowProcess.serveTime;//计算平均周转时间
                 new_jcb.add(nowProcess);//经处理过数据后加入new_jcb容器
                 EnqueueLast();//已到达的进程先入队
-                Collections.sort(link,new compare_AtPr());
+                //Collections.sort(link,new compare_AtPr());
             }
             else {
                 EnqueueLast();//已到达的进程先入队
                 link.addLast(nowProcess);//上一轮出的再紧接着进入队尾
-                Collections.sort(link,new compare_AtPr());
+                //Collections.sort(link,new compare_AtPr());
             }
             for(int i = 0 ; i < link.size() ; i++) {//处于等待状态的进程以1倍速增长优先权等级
                 link.get(i).priority += sliceTime;
@@ -246,7 +246,7 @@ public class processMenu {
      * 优先权调度算法
      */
     public void priority(){
-        ProcessQueue pq=new ProcessQueue();
+        ProcessQueue pq = new ProcessQueue();
         pq.EnqueueLast();
         System.out.println("*****************************************************");
         while(!link.isEmpty()) {
@@ -269,12 +269,81 @@ public class processMenu {
     public static void main(String[] args) {
         processMenu pm=new processMenu();
         pm.init();//初始化容器
-        pm.FCFS();pm.printProcess();
-        pm.SJF();pm.printProcess();
-        //pm.RR();pm.printProcess();
-        pm.HRN();pm.printProcess();
-        pm.priority();pm.printProcess();
+
+        System.out.println("FCFS先来先服务算法");
+        pm.FCFS();
+        pm.printProcess();
+        System.out.println();
+
+        System.out.println("SJF短作业优先算法");
+        pm.SJF();
+        pm.printProcess();
+        System.out.println();
+
+        System.out.println("RR时间片轮转算法");
+        pm.RR();
+        pm.printProcess();
+        System.out.println();
+
+        System.out.println("HNR最高响应比优先算法");
+        pm.HRN();
+        pm.printProcess();
+        System.out.println();
+
+        /*System.out.println("Priority优先权调度算法");
+        pm.priority();
+        pm.printProcess();*/
     }
+
+    public void FCFSRun(){
+        processMenu pm=new processMenu();
+        pm.init();//初始化容器
+
+        System.out.println("FCFS先来先服务算法");
+        pm.FCFS();
+        pm.printProcess();
+        System.out.println();
+    }
+
+    public void SJFRun(){
+        processMenu pm=new processMenu();
+        pm.init();//初始化容器
+
+        System.out.println("SJF短作业优先算法");
+        pm.SJF();
+        pm.printProcess();
+        System.out.println();
+    }
+
+    public void RRRun(){
+        processMenu pm=new processMenu();
+        pm.init();//初始化容器
+
+        System.out.println("RR时间片轮转算法");
+        pm.RR();
+        pm.printProcess();
+        System.out.println();
+    }
+
+    public void PriorityRun(){
+        processMenu pm=new processMenu();
+        pm.init();//初始化容器
+
+        System.out.println("Priority优先权调度算法");
+        pm.priority();
+        pm.printProcess();
+    }
+
+    public void HNRRun(){
+        processMenu pm=new processMenu();
+        pm.init();//初始化容器
+
+        System.out.println("HNR最高响应比优先算法");
+        pm.HRN();
+        pm.printProcess();
+        System.out.println();
+    }
+
 }
 
 

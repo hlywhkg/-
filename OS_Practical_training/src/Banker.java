@@ -166,6 +166,15 @@ public class Banker {
         }
     }
 
+    public void Rtest(){
+        for(int j = 0 ; j < N ; j++)
+        {
+            Available[j] += Request[j];
+            Allocation[I-1][j] -= Request[j];
+            NeedR[I-1][j] += Request[j];
+        }
+    }
+
     //释放资源
     public void RTest(){
         for (int j = 0; j < N; j++) {
@@ -227,9 +236,14 @@ public class Banker {
     }
 
     //安全算法检查,检查是否安全
+    private static int flg = 0;
+    static int count1 = 0;
     public boolean CheckedSafe(){
         //初始情况所有资源应该是已经分配过资源
         //0,代表还占用者.1,代表不在占用
+        if(count1 != 0){
+            test();
+        }
         int[] work = new int[N];
         for (int i = 0; i < N; i++) {
             work[i] = Available[i];
@@ -264,24 +278,80 @@ public class Banker {
             if(finish[i] == 0)
             {
                 System.out.println("系统不安全！");
+                if(count1 != 0){
+                    Rtest();
+                }
+                ++count1;
                 return false;
             }
         }
-        System.out.println("系统安全！");
-        System.out.println("存在一个安全序列：");
-        for(int i = 0 ; i < M;i++)
-        {
-            System.out.print("P"+Security[i]);
-            if(i < M - 1)
+        if(flg == 0) {
+            System.out.println("系统安全！");
+            System.out.println("存在一个安全序列：");
+            flg++;
+            for(int i = 0 ; i < M;i++)
             {
-                System.out.print("->");
+                System.out.print("P"+Security[i]);
+                if(i < M - 1)
+                {
+                    System.out.print("->");
+                }
             }
         }
         System.out.println();
+        if(count1 != 0){
+            Rtest();
+        }
+        ++count1;
         return true;
     }
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Banker banker = new Banker();
+        String choice;
+        System.out.println("*************************************************************");
+        System.out.println("                                                       银行家算法的实现  ");
+        System.out.println("*************************************************************");
+        banker.init();
+        banker.showData();
+
+        if(!banker.CheckedSafe()) {
+            System.out.println("系统不存在安全序列");
+            System.exit(0);
+        }
+
+
+        do
+        {
+            System.out.println("*************************************************************");
+            System.out.println("                     R(r):请求分配 ");
+            System.out.println("                     E(e):退出        ");
+            System.out.println("                     E(s):当前矩阵分配情况        ");
+            System.out.println("*************************************************************");
+            System.out.print("请选择：");
+            choice = sc.nextLine();
+            switch(choice)
+            {
+                case "r":
+                case "R":
+                    banker.RequestR();
+                    break;
+                case "e":
+                case "E":
+                    System.exit(0);//System.exit(0)是正常退出程序，System.exit(1)表示非正常退出程序。
+                case "s":
+                case "S":
+                    banker.showData();
+                    break;
+                default:
+                    System.out.println("请正确选择！");
+                    break;
+            }
+        }while(choice!="");
+    }
+
+    public void run(){
         Scanner sc = new Scanner(System.in);
         Banker banker = new Banker();
         String choice;

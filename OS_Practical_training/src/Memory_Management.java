@@ -16,6 +16,41 @@ import java.util.*;
 import java.util.LinkedList;
 
 
+/**
+ * 先进先出置换算法
+ */
+class FIFO {
+    public void F(int[] seq,int pages) {
+        int page_break = 0;// 断页次数
+        int count = 0;
+        LinkedList<Integer> list = new LinkedList<>();
+        for (int i = 0; i < seq.length; i++) {
+            if (list.contains(seq[i])) {// 如果即将访问的序列在物理块中，直接跳过
+                continue;
+            } else {// 如果即将访问的序列不在物理块中，添加到物理块中；如果满了，找到最久不被访问的序列，并删除替换
+                if(list.size() != pages) {
+                    list.addLast(seq[i]);// 该方法表示将指定的元素追加到此列表的末尾
+                    page_break++;//访问序列不存在，断页加一
+                }else {
+                    if(count == pages){
+                        count = 0;
+                    }
+                    list.remove(count);
+                    list.add(count,seq[i]);
+                    count++;
+                    page_break++;// 置换，断页加一
+                    System.out.println(Arrays.toString(list.toArray()));
+                }
+            }
+        }
+        // 输出结果
+        System.out.println("断页次数：" + page_break + "\n断页中断率：" + page_break * 1.0 / seq.length);
+    }
+}
+
+/**
+ * 最近最久未使用算法
+ */
 
 class LRU {
     public void L(int[] seq,int pages){
@@ -24,6 +59,7 @@ class LRU {
         LinkedList<Integer> list = new LinkedList<Integer>();
         // 通过for循环来遍历seq数组
         for (int i = 0; i < seq.length; i++) {
+            //list是框内元素,seq是后续地址流
             if (list.contains(seq[i])) {// 如果即将访问的序列在物理块中，重新记录其访问状态
                 int flag = list.indexOf(seq[i]);// 标记已经存在的序列的下标
                 list.remove(flag);// 删除这个元素
@@ -36,6 +72,7 @@ class LRU {
                     list.removeFirst();// 删除第一个元素
                     list.addLast(seq[i]);// 追加最后一个新元素
                     page_break++;// 置换，断页加一
+                    System.out.println(Arrays.toString(list.toArray()));
                 }
             }
         }
@@ -45,31 +82,9 @@ class LRU {
 }
 
 
-class FIFO {
-    public void F(int[] seq,int pages) {
-        int page_break = 0;// 断页次数
-        LinkedList<Integer> list = new LinkedList<>();
-        for (int i = 0; i < seq.length; i++) {
-            if (list.contains(seq[i])) {// 如果即将访问的序列在物理块中，直接跳过
-                continue;
-            } else {// 如果即将访问的序列不在物理块中，添加到物理块中；如果满了，找到最久不被访问的序列，并删除替换
-                if(list.size() != pages) {
-                    list.addLast(seq[i]);// 该方法表示将指定的元素追加到此列表的末尾
-                    page_break++;//访问序列不存在，断页加一
-                }else {
-                    list.removeFirst();// 删除第一个元素
-                    list.addLast(seq[i]);// 追加最后一个新元素
-                    page_break++;// 置换，断页加一
-                }
-            }
-        }
-        // 输出结果
-        System.out.println("断页次数：" + page_break + "\n断页中断率：" + page_break * 1.0 / seq.length);
-    }
-}
-
-
-
+/**
+ * 最佳置换算法
+ */
 class OPT {
     private static List<Integer> new_list = new ArrayList<Integer>();//定义一个缓存容器，备用
     private static int temp = 0;//定义每次置换时需要替换的元素序列号
@@ -84,9 +99,10 @@ class OPT {
                     page_break++;//断页加一
                 }else {//如果物理块满了
                     int flag = list.indexOf(index(seq,list,i));//此返回值为需要替换的序列号
-                    list.remove(flag);//删除这个元素
-                    list.addLast(seq[i]);// 追加最后一个新元素
+                    list.remove(flag);//替换这个元素
+                    list.add(flag,seq[i]);// 追加最后一个新元素
                     page_break++;// 置换，断页加一
+                    System.out.println(Arrays.toString(list.toArray()));
                 }
             }
         }
@@ -120,7 +136,7 @@ class OPT {
             }
         }
         new_list.clear();//清空new_list，恢复初始值
-        temp=0;//令temp=0；恢复初始值
+        temp = 0;//令temp=0；恢复初始值
         return value;
     }
 }
@@ -160,6 +176,39 @@ public class Memory_Management {
             }
         }
     }
+
+    static int[] seq2;
+    public static int init(){
+        int pages = 0;// 定义页面框数
+        Scanner scan = new Scanner(System.in);
+        System.out.println("请输入用户访问序列走向：");
+        String str = scan.nextLine();// 获取序列
+        String[] str1 = str.split(" ");// 将获取的访问序列用分隔符空格分装到字符串数组里
+        seq2 = new int[str1.length];// 定义访问序列
+        for (int i = 0; i < str1.length; i++) {
+            seq2[i] = Integer.valueOf(str1[i]);// 将String数组转化为int数组
+        }
+        System.out.println("请输入页面框数：");
+        pages = scan.nextInt();// 获取页面框数
+        return pages;
+    }
+
+    public void FIFOrun(){
+        int pages = init();
+        new FIFO().F(seq2, pages);
+    }
+
+    public void LRUrun(){
+        int pages = init();
+        new LRU().L(seq2, pages);
+    }
+
+    public void OPTrun(){
+        int pages = init();
+        new OPT().O(seq2,pages);
+    }
+
+
 }
 
 
