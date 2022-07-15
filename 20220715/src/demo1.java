@@ -1,5 +1,4 @@
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * @ClassName $申先生
@@ -7,6 +6,53 @@ import java.util.Stack;
  * @date 2022/7/15 12:55
  * @Version 1.0
  */
+
+class Solution {
+    int m,n;
+    public List<List<Integer>> pacificAtlantic(int[][] heights) {
+        List<List<Integer>> ans = new ArrayList<>();
+        m = heights.length;n = heights[0].length;
+        boolean[][] r1 = new boolean[m][n],r2 = new boolean[m][n];
+        Deque<int[]> d1 = new ArrayDeque<>(),d2 = new ArrayDeque<>();
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if(i == 0 || j == 0){
+                    r1[i][j] = true;
+                    d1.addLast(new int[]{i,j});
+                }
+                if(i == m - 1 || j == n -1){
+                    r2[i][j] = true;
+                    d2.addLast(new int[]{i,j});
+                }
+            }
+        }
+        bfs(r1,heights,d1);bfs(r2,heights,d2);
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if(r1[i][j] && r2[i][j]){
+                    List<Integer> l = new ArrayList<>();
+                    l.add(i);l.add(j);
+                    ans.add(l);
+                }
+            }
+        }
+        return ans;
+    }
+    int[][] dict = new int[][]{{-1,0},{1,0},{0,-1},{0,1}};
+    public void bfs(boolean[][] tmp,int[][] h,Deque<int[]> d){
+        while(!d.isEmpty()){
+            int[] ans = d.pollFirst();
+            int i = ans[0],j = ans[1];
+            for (int[] ret: dict) {
+                int nx = i + ret[0], ny = j + ret[1];
+                if (nx < 0 || nx >= m || ny < 0 || ny >= n) continue;
+                if (tmp[nx][ny] || h[nx][ny] < h[i][j]) continue;
+                d.addLast(new int[]{nx, ny});
+                tmp[nx][ny] = true;
+            }
+        }
+    }
+}
 
 class MinStack {
 
