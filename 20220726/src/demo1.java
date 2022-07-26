@@ -10,14 +10,83 @@ import java.util.Scanner;
  * @Version 1.0
  */
 
+class Main {
+    public static void reserve(int a){
+
+    }
+    public static void main(String[] args) {
+        int[] ret = new int[10001];
+        ret[1] = 1;
+        ret[2] = 2;
+        for(int i = 3 ; i < 10001 ; i++) {
+            ret[i] = ret[i-1] + ret[i-2];
+            ret[i] = ret[i] % 10000;
+        }
+        Scanner in = new Scanner(System.in);
+        // 注意 hasNext 和 hasNextLine 的区别
+        while (in.hasNextInt()) { // 注意 while 处理多个 case
+            int a = in.nextInt();
+            for(int i = 0 ; i < a ; i++) {
+                int x = in.nextInt();
+                if(ret[x] < 1000){
+                    String y = String.valueOf(ret[x]);
+                    StringBuilder sb = new StringBuilder(y);
+                    while(sb.length() < 4){
+                        StringBuilder zero = new StringBuilder("0");
+                        sb = zero.append(sb);
+                    }
+                    System.out.print(sb);
+                }else{
+                    System.out.print(ret[x]);
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+class Main3 {
+    public static void main(String[] args) throws InterruptedException {
+        Scanner in = new Scanner(System.in);
+        // 注意 hasNext 和 hasNextLine 的区别
+        while (in.hasNext()) { // 注意 while 处理多个 case
+            String a = in.nextLine();
+            int b = 0;
+            for(int i = 0 ; i < a.length() ; i++) {
+                b += a.charAt(i) - '0';
+            }
+            int c = 0;
+            while(b >= 10){
+                while(b >= 10){
+                    c += b % 10;
+                    b /= 10;
+                }
+                b += c;
+                c = 0;
+            }
+            System.out.println(b);
+        }
+    }
+}
+
 public class demo1 {
+    public static void main(String[] args) {
+        //System.out.println((long)Math.pow(18,6));
+        //System.out.println(0123);
+        StringBuilder sb = new StringBuilder("10");
+        while(sb.length() < 4){
+            StringBuilder zero = new StringBuilder("0");
+            sb = zero.append(sb);
+            System.out.println(sb);
+        }
+    }
 }
 
 /**
  * 实际版
  */
 
-class Main {
+class Main2 {
     static Deque<Deque<int[]>> deques = new ArrayDeque<>();
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
