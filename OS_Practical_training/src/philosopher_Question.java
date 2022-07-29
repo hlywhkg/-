@@ -111,5 +111,20 @@ public class philosopher_Question {
         new Thread(p.new philosopher(4)).start();
 
     }
+
+    public void run() throws InterruptedException {
+        philosopher_Question p = new philosopher_Question();
+        Thread t1 = new Thread(p.new philosopher(0));
+        t1.start();
+        Thread t2 = new Thread(p.new philosopher(1));
+        t2.start();
+        Thread t3 = new Thread(p.new philosopher(2));
+        t3.start();
+        Thread t4 = new Thread(p.new philosopher(3));
+        t4.start();
+        Thread t5 = new Thread(p.new philosopher(4));
+        t5.start();
+        t1.join();t2.join();t3.join();t4.join();t5.join();
+    }
 }
 

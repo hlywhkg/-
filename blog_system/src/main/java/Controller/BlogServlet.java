@@ -42,6 +42,14 @@ public class BlogServlet extends HttpServlet {
         }
     }
 
+
+    /**
+     * 这个方法是用来发布博客的
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //获取会话
@@ -60,7 +68,7 @@ public class BlogServlet extends HttpServlet {
         }
         req.setCharacterEncoding("utf8");
         String title = req.getParameter("title");
-        String content = req.getParameter("blog_content");
+        String content = req.getParameter("content");
         if(title == null || "".equals(title) || content == null || "".equals(content)){
             resp.setContentType("text/html; charset=utf8");
             resp.getWriter().write("{\"ok\": false, \"reason\":\"缺少必要的参数,发布博客失败\"}");

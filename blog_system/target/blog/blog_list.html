@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的博客系统</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+    <!-- 这是一个主页页面 -->
+<body>
+    <!--导航栏-->
+    <div class="nav">
+        <img src="logo.jpg" alt="">
+        <span class="title">我的博客系统</span>
+        <!-- 占位-占据中间位置 -->
+        <span class="spacer"></span>
+        <!-- 前端目前只使用页面内跳转 -->
+        <a href="blog_list.html">主页</a>
+        <a href="blog_editor.html">写博客</a>
+        <!-- #是暂时不晓得用什么链接时可以使用 -->
+        <a href="logout">注销</a>
+    </div>
+
+    <!--版心-->
+    <div class="container">
+
+        <!--左侧个人信息-->
+        <div class="left">
+            <div class="card">
+                <img src="1.jpeg" alt="">
+                <h3>
+
+                </h3>
+                <a href="#">github链接</a>
+                <div class="counter">
+                    <span>文章</span>
+                    <span>分类</span>
+                </div>
+                <div class="counter">
+                    <span>2</span>
+                    <span>1</span>
+                </div>
+            </div>
+        </div>
+
+        <!--右侧内容详情-->
+        <div class="right">
+            <!-- 博客展示 -->
+            <!-- <div class="blog">
+                <div class="title">我的第一篇博客</div>
+                <div class="date">2022-07-05</div>
+                <div class="content">
+                    今天开始我要认真写代码Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis sint rerum, vero ea aliquid sunt velit eius est, illo debitis unde quae officiis doloremque minima perferendis eaque ipsum repellendus culpa?
+                </div>
+                <a href="blog_content.html">查看全文 &gt;&gt; </a>
+            </div>
+            <div class="blog">
+                <div class="title">我的第二篇博客</div>
+                <div class="date">2022-07-05</div>
+                <div class="content">
+                    今天开始我要认真写代码Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis sint rerum, vero ea aliquid sunt velit eius est, illo debitis unde quae officiis doloremque minima perferendis eaque ipsum repellendus culpa?
+                </div>
+                <a href="blog_content.html">查看全文 &gt;&gt; </a>
+            </div> -->
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function getBlogList(){
+            $.ajax({
+                type: "get",
+                url: "blog",
+                /* 获取到的body已经是一个json数组了，里面每个元素就是一个对象
+                根据这个对象来构造div */
+                success: function(body){
+                    let rightDiv = document.querySelector(".right");
+                    rightDiv.innerHTML = "";
+                    for(let blog of body){
+                        
+                        /* 构造出一个个新的div来继承自原有的css样式，但内容
+                        需要从服务器中获取来更改 */
+                        let blogDiv = document.createElement('div');
+                        
+                        /* 赋予blog的css样式 */
+                        blogDiv.className = 'blog';
+                        
+                        /* 构造一个标题div，内容是blog中获取的内容 */
+                        let titleDiv = document.createElement('div');
+                        titleDiv.innerHTML = blog.title;
+                        titleDiv.className = 'title';
+                        blogDiv.appendChild(titleDiv);
+                        
+                        /* 构造一个发布时间 */
+                        let dateDiv = document.createElement('div');
+                        dateDiv.innerHTML = blog.postTime;
+                        dateDiv.className = 'date';
+                        blogDiv.appendChild(dateDiv);
+                        
+                        /* 构造一个内容摘要 */
+                        let contentDiv = document.createElement('div');
+                        contentDiv.innerHTML = blog.blog_content;
+                        contentDiv.className = 'content';
+                        blogDiv.appendChild(contentDiv);
+                        
+                        /* 构造a标签跳转查看全文 */
+                        let aDiv = document.createElement('a');
+                        aDiv.innerHTML = "查看全文&gt;&gt;"
+                        
+                        /* 实现跳转 */
+                        aDiv.href = "blog_content.html?blogId=" + blog.blogId;
+                        
+                        blogDiv.appendChild(aDiv);
+                        rightDiv.appendChild(blogDiv);
+                    }
+                },
+                error:function(body){
+                    alert("获取博客列表失败! ");
+                }
+            });
+        }
+        getBlogList();
+
+        function getUserInfo(){
+            $.ajax({
+                type:"get",
+                url:"login",
+                success:function(body){
+                    if(body.userId && body.userId > 0){
+                        console.log("登录成功,欢迎您" + body.username);
+                        changeUsername(body.username);
+                    }else{
+                        alert("当前处于未登录状态,请先登录");
+                        location.assign("login.html");
+                    }
+                },
+                error:function(body){
+                    alert("当前处于未登录状态,请先登录");
+                    location.assign("login.html");
+                }
+            });
+        }
+        getUserInfo();
+        function changeUsername(username){
+            let usernamediv = document.querySelector('.card>h3');
+            usernamediv.innerHTML = username;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客正文页</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/blog-content.css">
+
+    <!-- 引入 editor.md 的依赖 -->
+    <link rel="stylesheet" href="editor.md/css/editormd.min.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="editor.md/lib/marked.min.js"></script>
+    <script src="editor.md/lib/prettify.min.js"></script>
+    <script src="editor.md/editormd.js"></script>
+
+</head>
+<body>
+    <!--导航栏-->
+    <div class="nav">
+        <img src="logo.jpg" alt="">
+        <span class="title">我的博客系统</span>
+        <span class="spacer"></span>
+        <a href="blog_list.html">主页</a>
+        <a href="blog_editor.html">写博客</a>
+        <a href="logout">注销</a>
+    </div>
+
+    <!--版心-->
+    <div class="container">
+
+        <!--左侧个人信息-->
+        <div class="left">
+            <div class="card">
+                <img src="1.jpeg" alt="">
+                <h3>
+                    
+                </h3>
+                <a href="#">github链接</a>
+                <div class="counter">
+                    <span>文章</span>
+                    <span>分类</span>
+                </div>
+                <div class="counter">
+                    <span>2</span>
+                    <span>1</span>
+                </div>
+            </div>
+        </div>
+
+        <!--右侧博客内容详情-->
+        <div class="right">
+            <div class="blog-content">
+                <!-- 标题 -->
+                <h3>
+
+                </h3>
+                <div class="date">
+
+                </div>
+                <div id="content" style="opacity: 70%;">
+
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            /* 获取博客详情 */
+            function getBlogcontent(){
+                $.ajax({
+                    type:"get",
+                    url:"blog" + location.search,
+                    /* 此时这个body获取到的是一个json对象，而不是一个数组了 */
+                    success:function(body){
+                        /* 之前我们在列表页使用的是用从客户端传来的内容重新构造一个个div，
+                        是因为内容不止我们原来所写的那么几个div所以需要重写构造
+                        而现在只有这么一篇博客详情，因此div就可以使用原来的 */
+                        /* 获取标题 */
+                        let h3 = document.querySelector('.blog-content>h3');
+                        h3.innerHTML = body.title;
+
+                        /* 获取日期 */
+                        let date = document.querySelector('.date');
+                        date.innerHTML = body.postTime;
+
+                        /* 获取正文 */
+                        /* let content = document.querySelector('.content');
+                        content.innerHTML = body.blog_content; */
+                        /* 第一个参数是转化后的数据传到这个content里面
+                        第二个参数是需要渲染的内容 */
+                        editormd.markdownToHTML('content',{
+                            markdown: body.blog_content
+                        });
+                    }
+                });
+            }
+            getBlogcontent();
+            //获取当前用户是否处于登录状态
+            function getUserInfo(){
+            $.ajax({
+                type:"get",
+                url:"login",
+                success:function(body){
+                    if(body.userId && body.userId > 0){
+                        console.log("登录成功,欢迎您" + body.username);
+                        changeUsername(body.username);
+                        /* 在此处使用getAuthorInfo不仅仅是获取作者信息了
+                        还能顺便在里面修改一些逻辑来进行判断 */
+                        getAuthorInfo(body);
+                    }else{
+                        alert("当前处于未登录状态,请先登录");
+                        location.assign("login.html");
+                    }
+                },
+                error:function(body){
+                    alert("当前处于未登录状态,请先登录");
+                    location.assign("login.html");
+                }
+            });
+        }
+        getUserInfo();
+        function changeUsername(username){
+            let usernamediv = document.querySelector('.card>h3');
+            usernamediv.innerHTML = username;
+        }
+
+        function getAuthorInfo(user){
+            $.ajax({
+                type:"get",
+                url:"authorInfo" + location.search,
+                success:function(body){
+                    if(body.username){
+                        changeUsername(body.username);
+
+                        /* 在此处添加判断逻辑 */
+                        if(body.userId == user.userId){
+                            /* 相同就可以添加删除按钮了 */
+                            let nav = document.querySelector('.nav');
+                            let delA = document.createElement('a');
+                            delA.innerHTML = "删除";
+                            delA.href = "blogDel" + location.search;
+                            nav.appendChild(delA);
+                        }
+                    }else{
+                        console.log("获取作者信息失败");
+                    }
+                },
+                error:function(body){
+                    console.log("获取作者信息失败");
+                }
+            });
+        }
+        /* getAuthorInfo(); */
+        </script>
+</body>
+</html>

@@ -23,7 +23,7 @@ class LRU {
                 list.remove(flag);// 删除这个元素
                 list.addLast(seq[i]);// 在末尾重新添加它
             } else {// 如果即将访问的序列不在物理块中，添加到物理块中；如果满了，找到最久不被访问的序列，并删除替换
-                if(list.size()!=pages) {
+                if(list.size() != pages) {
                     list.addLast(seq[i]);// 该方法表示将指定的元素追加到此列表的末尾
                     page_break++;//访问序列不存在，断页加一
                 }else {
@@ -87,6 +87,7 @@ class OPT {
         //输出结果
         System.out.println("断页次数：" + page_break + "\n断页中断率：" + page_break * 1.0 / seq.length);
     }
+
     //此方法主要是寻找需要替换的序列号，参数分别表示为访问序列号，物理块所装的序列号，当前要访问的序列号
     //temp和new_list均为静态变量，因为在进行下一次的调用时，上一次的值会保留下来，这样有利于比较值的大小
     public static int index(int[] seq, LinkedList<Integer> list, int num) {

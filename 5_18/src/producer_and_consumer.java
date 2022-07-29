@@ -29,7 +29,7 @@ public class producer_and_consumer {
         public void run() {
             while(true) {
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(800);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -62,6 +62,7 @@ public class producer_and_consumer {
                         try {
                             LOCK.wait();
                         } catch (Exception e) {
+                            e.printStackTrace();
                         }
                     }
                     count--;

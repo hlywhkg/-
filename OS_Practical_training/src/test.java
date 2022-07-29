@@ -20,7 +20,7 @@ public class test{
         void printf(String format , Object ... args);
     }
 
-    public static void main1(String[] args) {
+    public static void main(String[] args) {
         CLibrary.a.printf("Hello,World, DLL is successful");
 
         for (int i = 0; i < args.length; i++) {
@@ -33,12 +33,12 @@ public class test{
 
 class Main{
 
-    public interface CLibrary extends StdCallLibrary{
-        CLibrary a = (CLibrary) Native.loadLibrary("D:\\gitee\\one-question-per-day\\OS_Practical_training\\MyDLL.dll",CLibrary.class);
+    public interface CLibrary1 extends StdCallLibrary{
+        CLibrary1 a = (CLibrary1) Native.loadLibrary("MyDLL",CLibrary1.class);
         int add(int a,int b);
     }
 
     public static void main(String[] args) {
-        System.out.println("the result of calling MyDLL.dll is " + CLibrary.a.add(2,3));
+        System.out.println("the result of calling MyDLL.dll is " + CLibrary1.a.add(2,3));
     }
 }

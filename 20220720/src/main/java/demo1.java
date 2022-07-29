@@ -5,7 +5,31 @@
  * @Version 1.0
  */
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
+class Solution {
+    public List<List<Integer>> shiftGrid(int[][] grid, int k) {
+        int m = grid.length,n = grid[0].length;
+        List<List<Integer>> ans = new ArrayList<>();
+        int[][] cnt = new int[m][n];
+        for(int i = 0 ;i < m ; i++) {
+            for(int j = 0; j < n ; j++) {
+               int y = (i + k) / n , x = ((i + k) / n) % m,idx = 0;
+               while(idx != m)cnt[(x++)%m][y] = grid[idx++][i];
+            }
+        }
+        for (int i = 0; i < m; i++) {
+            List<Integer>list = new ArrayList<>();
+            for (int j = 0; j < n; j++) {
+                list.add(cnt[i][j]);
+            }
+            ans.add(list);
+        }
+        return ans;
+    }
+}
 
 class Main {
     public static void main(String[] args) {

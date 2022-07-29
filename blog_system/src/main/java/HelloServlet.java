@@ -43,6 +43,10 @@ class main{
             BigDecimal c = in.nextBigDecimal();
             if(a.add(b). > 0)
         }*/
-
+        /*StringBuilder sb = new StringBuilder();
+        for(int i = 0 ; i < n ; i++){
+            sb.append(arr[i] + " ");
+        }
+        sb.deleteCharAt(sb.length() - 1);*/
     }
 }

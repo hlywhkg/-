@@ -1,3 +1,6 @@
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * @ClassName $申先生
  * @Description days
@@ -25,6 +28,19 @@ public class producer_and_consumer {
         new Thread(test1.new Producer()).start();
         new Thread(test1.new Consumer()).start();
     }
+
+    public void run(){
+        producer_and_consumer test1 = new producer_and_consumer();
+        new Thread(test1.new Producer()).start();
+        new Thread(test1.new Consumer()).start();
+        new Thread(test1.new Producer()).start();
+        new Thread(test1.new Consumer()).start();
+        new Thread(test1.new Producer()).start();
+        new Thread(test1.new Consumer()).start();
+        new Thread(test1.new Producer()).start();
+        new Thread(test1.new Consumer()).start();
+    }
+
     class Producer implements Runnable {
         @Override
         public void run() {

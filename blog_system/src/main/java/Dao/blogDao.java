@@ -32,7 +32,7 @@ public class blogDao {
             preparedStatement.setString(1,blog.getTitle());
             preparedStatement.setString(2,blog.getBlog_content());
             preparedStatement.setInt(3,blog.getUserId());
-
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {

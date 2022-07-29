@@ -109,7 +109,7 @@ public class processMenu {
     }
 
     /**
-     * //最高响应比优先调度算法
+     * 最高响应比优先调度算法
      */
     public void HRN() {
         ProcessQueue pq = new ProcessQueue();
@@ -141,6 +141,7 @@ public class processMenu {
         int nowTime = 0;// 当前时间
         double sliceTime;//轮转调度时间片
         int i=0;//记录当前出入队列的次数
+
         public void EnqueueLast() {//进程首次入队，可一次进多个,从队尾进入
             while (k < jcb.size()) {//当遍历完jcb中的所有进程时结束
                 if (jcb.get(k).arriveTime <= nowTime) {//已经到达的进程按到达时间先后进入队列
@@ -149,6 +150,12 @@ public class processMenu {
                 } else {
                     break;//如果该进程还未入队，即先结束遍历，保留当前下标k值，注意：此处不要k--；
                 }
+            }
+            /**
+             * 此处只为最高响应比算法所用
+             */
+            for(int j=0;j<link.size();++j) {
+                link.get(j).waitTime = nowTime - link.get(j).arriveTime;//所有进入等待队列的进程等待时间重新赋值
             }
         }
 
@@ -160,9 +167,6 @@ public class processMenu {
             nowProcess.aveRoundTime = (double) nowProcess.roundTime / nowProcess.serveTime;//计算带权周转时间
             nowTime = nowProcess.finishTime;//获得结束时间，即当前时间，方便判断剩下的进程是否已到达
             new_jcb.add(nowProcess);//经处理过数据后加入new_jcb容器
-            for(int j=0;j<link.size();++j) {
-                link.get(j).waitTime = nowTime - link.get(j).arriveTime;//所有进入等待队列的进程等待时间重新赋值,此处只为最高响应比算法所用
-            }
         }
 
 
@@ -232,8 +236,8 @@ class compareAt_St implements Comparator<JCB> {// 按到达时间升序，若到
 class comparePriority implements Comparator<JCB>{//按响应比降序排序
 
     public int compare(JCB o1, JCB o2) {
-        double r1=(double)o1.waitTime/o1.serveTime;
-        double r2=(double)o2.waitTime/o2.serveTime;
+        double r1 = o1.waitTime * 1.0 / o1.serveTime;
+        double r2 = o2.waitTime * 1.0 / o2.serveTime;
         return r1 < r2 ? 1 :-1;
     }
 
@@ -243,9 +247,7 @@ class compare_AtPr implements Comparator<JCB>{//按优先权降序排序,如果�
     public int compare(JCB o1, JCB o2) {
         if(o1.priority < o2.priority) {
             return 1;
-        }else if(o1.priority > o2.priority){
-            return -1;
-        }else {
+        }else if(o1.priority == o2.priority){
             int a = o1.arriveTime - o2.arriveTime;
             if (a > 0)
                 return 1;
@@ -253,6 +255,8 @@ class compare_AtPr implements Comparator<JCB>{//按优先权降序排序,如果�
                 return o1.serveTime > o2.serveTime ? 1 : -1;
             } else
                 return -1;
+        }else {
+            return -1;
         }
     }
 }

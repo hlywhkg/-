@@ -28,6 +28,7 @@ public class reader_and_writer {
         }
         System.out.println(Thread.currentThread().getName() + " begin to read");
         readerCount++;
+        //只要读者有一个人就将reading赋true,不需要重复赋值
         if (readerCount == 1) {
             reading = true;
         }
@@ -39,7 +40,7 @@ public class reader_and_writer {
         System.out.println(Thread.currentThread().getName() + " reading done!");
         if(readerCount == 0){
             reading = false;
-            System.out.println(" can be writing");
+            System.out.println(" can be reading or writing");
         }
         notifyAll();
     }
@@ -121,13 +122,28 @@ public class reader_and_writer {
         new Thread(new writer(wr)).start();
         new Thread(new reader(wr)).start();
         new Thread(new writer(wr)).start();
-        new Thread(new reader(wr)).start();
-        new Thread(new reader(wr)).start();
-        new Thread(new writer(wr)).start();
+        //new Thread(new reader(wr)).start();
+        //new Thread(new reader(wr)).start();
+        //new Thread(new writer(wr)).start();
         //测试写的时候不能读
         Thread t = new Thread(new reader(wr));
         Thread.sleep(4000);
         t.start();
+    }
+
+    public void run() throws InterruptedException {
+        reader_and_writer wr = new reader_and_writer();
+        new Thread(new writer(wr)).start();
+        new Thread(new reader(wr)).start();
+        new Thread(new writer(wr)).start();
+        //new Thread(new reader(wr)).start();
+        //new Thread(new reader(wr)).start();
+        //new Thread(new writer(wr)).start();
+        //测试写的时候不能读
+        Thread t = new Thread(new reader(wr));
+        Thread.sleep(4000);
+        t.start();
+        t.join();
     }
 }
 
