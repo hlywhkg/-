@@ -1,6 +1,4 @@
-import com.bean.User.User;
-import com.bean.User.UserController;
-import com.bean.User.UserController2;
+import com.bean.User.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -19,7 +17,13 @@ public class App4 {
         User user2 = context.getBean("user2",User.class);
         System.out.println(user2);*/
 
-        UserController2 user = context.getBean("userController2",UserController2.class);
+        /*UserController2 user = context.getBean("userController2",UserController2.class);
+        user.sayHi();*/
+
+        /*UserService2 user = context.getBean("userService2",UserService2.class);
+        user.sayHi();*/
+
+        UserComponent2 user = context.getBean("userComponent2",UserComponent2.class);
         user.sayHi();
     }
 
