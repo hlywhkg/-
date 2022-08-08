@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket</title>
+</head>
+<body>
+    <input type="text" id = "message">
+    <input type="button" id = "submit" value="提交">
+
+    <script>
+
+        /* 创建一个websocket实例 */
+        let url = "ws://127.0.0.1:8080/test"
+        let websocket = new WebSocket(url)
+
+        /* 给实例挂载一些回调函数 */
+        websocket.onopen = function() {
+            console.log("建立连接");
+        }
+
+        websocket.onmessage = function(e) {
+            console.log("收到消息" + e.data);
+        }
+
+        websocket.onerror = function() {
+            console.log("连接异常");
+        }
+
+        websocket.onclose = function() {
+            console.log("连接关闭");
+        }
+
+        let input = document.querySelector('#message');
+        let button = document.querySelector('#submit')
+        button.onclick = function() {
+            console.log("发送消息" + input.value);
+            websocket.send(input.value);
+        }
+
+    </script>
+</body>
+</html>
