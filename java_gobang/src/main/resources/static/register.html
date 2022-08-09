@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="js/common.css">
+    <link rel="stylesheet" href="js/register.css">
+
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="nav">
+        <span>五子棋对战</span>
+      </div>
+  
+      <div class="register-container">
+        <div class="register-dialog">
+          <!-- 标题 -->
+          <h2>注册</h2>
+  
+          <div class="row">
+            <span>用户名</span>
+            <input type="text" id = "username">
+          </div>
+    
+          <div class="row">
+            <span>密码</span>
+            <input type="password" id="password">
+          </div>
+    
+          <div class="row-button">
+            <button id="submit">提交</button>
+          </div>
+        </div>
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+      <script>
+          let submit = document.querySelector('#submit');
+          submit.onclick = function(){
+              let username = document.querySelector('#username').value;
+              let password = document.querySelector('#password').value;
+              $.ajax({
+                  method:"post",
+                  url:"/register",
+                  data:{
+                      username: username,
+                      password: password
+                  },
+                  success: function(data){
+                      console.log(JSON.stringify(data));
+                    if(data && data.username){
+                        alert("注册成功");
+                        location.assign('login.html');
+                    }else{
+                        alert("注册失败")
+                    }
+                  }
+              })
+          }
+      </script>
+</body>
+</html>
