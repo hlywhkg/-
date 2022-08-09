@@ -85,7 +85,8 @@ public class MatchAPI extends TextWebSocketHandler {
     }
 
     @Override
+    //处理玩家断开连接
     public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
-        super.afterConnectionClosed(session, status);
+
     }
 }
