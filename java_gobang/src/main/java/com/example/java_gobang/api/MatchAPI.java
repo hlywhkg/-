@@ -6,6 +6,7 @@
  */
 package com.example.java_gobang.api;
 
+import com.example.java_gobang.game.Match;
 import com.example.java_gobang.game.MatchRequest;
 import com.example.java_gobang.game.MatchResponse;
 import com.example.java_gobang.game.OnlineUserManager;
@@ -26,6 +27,9 @@ public class MatchAPI extends TextWebSocketHandler {
     @Autowired
     private OnlineUserManager onlineUserManager;
 
+    @Autowired
+    private Match match;
+
     @Override
     //处理用户连接
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
@@ -37,6 +41,7 @@ public class MatchAPI extends TextWebSocketHandler {
             response.setOk(false);
             response.setReason("玩家尚未登录!");
             session.sendMessage(new TextMessage(objectMapper.writeValueAsString(response)));
+            return;
         }
         //检查玩家的上线状态（是否多开）
         //在给玩家设置上线状态时，需要先判断之前玩家是否已经登录过了
@@ -45,7 +50,9 @@ public class MatchAPI extends TextWebSocketHandler {
             MatchResponse response = new MatchResponse();
             response.setOk(true);
             response.setReason("当前游戏禁止多开");
+            response.setMessage("repeatConnection");
             session.sendMessage(new TextMessage(objectMapper.writeValueAsString(response)));
+            return;
         }
         //当玩家获取到身份信息后，就可以给玩家设置上线状态了
         onlineUserManager.enterGameHall(user.getUserId(),session);
@@ -67,10 +74,12 @@ public class MatchAPI extends TextWebSocketHandler {
         if(request.getMessage().equals("startMatch")){
             //加入匹配器中
             //TODO
+            match.add(user);
             response.setMessage("startMatch");
         }else if(request.getMessage().equals("stopMatch")){
             //从匹配器中移除
             //TODO
+            match.remove(user);
             response.setMessage("stopMatch");
         }else{
             response.setOk(false);
@@ -80,13 +89,37 @@ public class MatchAPI extends TextWebSocketHandler {
     }
 
     @Override
+    //异常连接处理
     public void handleTransportError(WebSocketSession session, Throwable exception) throws Exception {
-        super.handleTransportError(session, exception);
+        User user = (User) session.getAttributes().get("user");
+        try{
+            WebSocketSession tmpSession = onlineUserManager.getGameHallSession(user.getUserId());
+            if(tmpSession == session){
+                onlineUserManager.exitGameHall(user.getUserId());
+            }
+            //TODO 从匹配器中移除
+            match.remove(user);
+            System.out.println("玩家"+ user.getUsername() +"离开游戏大厅");
+        }catch (NullPointerException e){
+            System.out.println("当前用户尚未登录");
+        }
     }
 
     @Override
     //处理玩家断开连接
     public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
+        User user = (User) session.getAttributes().get("user");
+        try{
+            WebSocketSession tmpSession = onlineUserManager.getGameHallSession(user.getUserId());
+            if(tmpSession == session){
+                onlineUserManager.exitGameHall(user.getUserId());
+            }
+            //TODO 从匹配器中移除
+            match.remove(user);
+            System.out.println("玩家"+ user.getUsername() +"离开游戏大厅");
+        }catch (NullPointerException e){
+            System.out.println("当前用户尚未登录");
+        }
 
     }
 }

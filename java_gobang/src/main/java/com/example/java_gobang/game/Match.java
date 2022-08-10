@@ -119,6 +119,7 @@ public class Match {
                 User user1 = matchQueue.poll();
                 User user2 = matchQueue.poll();
 
+                System.out.println("匹配出两个玩家" + user1.getUsername() +" " + user2.getUsername());
                 WebSocketSession session1 = onlineUserManager.getGameHallSession(user1.getUserId());
                 WebSocketSession session2 = onlineUserManager.getGameHallSession(user2.getUserId());
                 if(session1 == null){

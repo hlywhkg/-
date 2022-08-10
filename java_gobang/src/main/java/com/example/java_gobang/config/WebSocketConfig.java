@@ -6,6 +6,7 @@
  */
 package com.example.java_gobang.config;
 
+import com.example.java_gobang.api.GameAPI;
 import com.example.java_gobang.api.MatchAPI;
 import com.example.java_gobang.api.TestAPI;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ public class WebSocketConfig implements WebSocketConfigurer {
     @Autowired
     private MatchAPI matchAPI;
 
+    @Autowired
+    private GameAPI gameAPI;
+
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
         //这个方法可以将一个消息处理器和一个路由关联上，访问这个路由后将使用testAPI的方法进行消息处理
@@ -33,5 +37,7 @@ public class WebSocketConfig implements WebSocketConfigurer {
         //拦截器，可以获取到HttpSession中的session供webSocket中的session使用
         registry.addHandler(matchAPI,"/findMatch").
                 addInterceptors(new HttpSessionHandshakeInterceptor());
+
+        registry.addHandler(gameAPI,"/game");
     }
 }

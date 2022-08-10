@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>游戏大厅</title>
-    <link rel="stylesheet" href="js/common.css">
-    <link rel="stylesheet" href="js/game_hall.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/game_hall.css">
 
 </head>
 <body>
@@ -17,7 +17,7 @@
     <div class="container">
         <!-- 这个用来存放用户的比赛信息 -->
         <div>
-            <div class="screen"></div>
+            <div id="screen"></div>
             <button id="match-button">开始匹配</button>
         </div>
     </div>
@@ -30,12 +30,16 @@
             url: '/userInfo',
             success: function(data) {
                 let screen = document.querySelector('#screen');
+                if(data.username == null){
+                    alert("当前尚未登录，请先登录!");
+                    location.assign("/login.html");
+                }
                 screen.innerHTML = '玩家: ' + data.username + ', 分数: ' + data.score + "<br> 比赛场次: " + data.totalCount + ", 获胜场次: " + data.winCount;
             }
         });
 
         /* 处理匹配功能 */
-        let websocket = new WebSocket("127.0.0.1:8080/findMatch");
+        let websocket = new WebSocket("ws://127.0.0.1:8080/findMatch");
         let button = document.querySelector('#match-button');
         /* 点击开始匹配 */
         button.onclick = function(){
@@ -64,7 +68,7 @@
         /* 这个函数是当收到来自服务器的消息时调用的 */
         websocket.onmessage = function(e){
             /* 字符串转为JSON对象 */
-            let resp = JSON.parse(e);
+            let resp = JSON.parse(e.data);
             if(!resp.ok){
                 console.log("游戏大厅发生错误" + resp.reason);
                 location.assign('/login.html');
@@ -79,6 +83,9 @@
             }else if(resp.message == 'MatchSuccess'){
                 console.log("匹配成功，进入游戏界面");
                 location.assign('/game_room.html');
+            }else if(resp.message == 'repeatConnection'){
+                alert("检测到当前为多开，请使用其他账号登录");
+                location.assign("/login.html");
             }else{
                 console.log("非法的message" + resp.message);
             }

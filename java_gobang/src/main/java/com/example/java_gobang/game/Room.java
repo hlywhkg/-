@@ -7,12 +7,23 @@
 package com.example.java_gobang.game;
 
 import com.example.java_gobang.model.User;
+import com.example.java_gobang.model.UserMapper;
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.UUID;
 
 @Data
 public class Room {
+    @Autowired
+    private RoomManager roomManager;
+
+    @Autowired
+    private OnlineUserManager onlineUserManager;
+
+    @Autowired
+    private UserMapper userMapper;
+
     private String roomId;
 
     private User user1;
