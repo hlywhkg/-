@@ -64,6 +64,7 @@ public class UserController {
         if(user == null){
             return new User();
         }
-        return user;
+        User newUser = userMapper.selectByName(user.getUsername());
+        return newUser;
     }
 }

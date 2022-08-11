@@ -39,7 +39,7 @@ public class MatchAPI extends TextWebSocketHandler {
             //玩家还未登陆就进入游戏大厅了
             MatchResponse response = new MatchResponse();
             response.setOk(false);
-            response.setReason("玩家尚未登录!");
+            response.setReason("[afterConnectionEstablished]玩家尚未登录!");
             session.sendMessage(new TextMessage(objectMapper.writeValueAsString(response)));
             return;
         }
@@ -64,7 +64,7 @@ public class MatchAPI extends TextWebSocketHandler {
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
         User user = (User) session.getAttributes().get("user");
         if(user == null){
-            System.out.println("玩家尚未登录");
+            System.out.println("[handleTextMessage]玩家尚未登录");
             return;
         }
         System.out.println("开始匹配" + user.getUserId() + "message" + message.toString());
@@ -101,7 +101,7 @@ public class MatchAPI extends TextWebSocketHandler {
             match.remove(user);
             System.out.println("玩家"+ user.getUsername() +"离开游戏大厅");
         }catch (NullPointerException e){
-            System.out.println("当前用户尚未登录");
+            System.out.println("[handleTransportError]当前用户尚未登录");
         }
     }
 
@@ -118,7 +118,7 @@ public class MatchAPI extends TextWebSocketHandler {
             match.remove(user);
             System.out.println("玩家"+ user.getUsername() +"离开游戏大厅");
         }catch (NullPointerException e){
-            System.out.println("当前用户尚未登录");
+            System.out.println("[afterConnectionClosed]当前用户尚未登录");
         }
 
     }

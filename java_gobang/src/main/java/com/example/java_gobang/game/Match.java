@@ -123,11 +123,11 @@ public class Match {
                 WebSocketSession session1 = onlineUserManager.getGameHallSession(user1.getUserId());
                 WebSocketSession session2 = onlineUserManager.getGameHallSession(user2.getUserId());
                 if(session1 == null){
-                    matchQueue.add(user2);
+                    matchQueue.offer(user2);
                     return;
                 }
                 if(session2 == null){
-                    matchQueue.add(user1);
+                    matchQueue.offer(user1);
                     return;
                 }
                 //防止多开
@@ -142,10 +142,12 @@ public class Match {
 
                 //给玩家1发送匹配成功的信息
                 MatchResponse response1 = new MatchResponse();
+                response1.setOk(true);
                 response1.setMessage("MatchSuccess");
                 session1.sendMessage(new TextMessage(objectMapper.writeValueAsString(response1)));
                 //给玩家2发送匹配成功的信息
                 MatchResponse response2 = new MatchResponse();
+                response2.setOk(true);
                 response2.setMessage("MatchSuccess");
                 session2.sendMessage(new TextMessage(objectMapper.writeValueAsString(response2)));
             }catch (IOException | InterruptedException e){

@@ -14,4 +14,8 @@ public interface UserMapper {
     int insert(User user);
 
     User selectByName(String name);
+
+    void userWin(int userId);
+
+    void userLose(int userId);
 }

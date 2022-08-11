@@ -32,14 +32,15 @@
                 let screen = document.querySelector('#screen');
                 if(data.username == null){
                     alert("当前尚未登录，请先登录!");
-                    location.assign("/login.html");
+                    location.replace("/login.html");
                 }
                 screen.innerHTML = '玩家: ' + data.username + ', 分数: ' + data.score + "<br> 比赛场次: " + data.totalCount + ", 获胜场次: " + data.winCount;
             }
         });
 
         /* 处理匹配功能 */
-        let websocket = new WebSocket("ws://127.0.0.1:8080/findMatch");
+        let url = 'ws://' + location.host + '/findMatch';
+        let websocket = new WebSocket(url);
         let button = document.querySelector('#match-button');
         /* 点击开始匹配 */
         button.onclick = function(){
@@ -60,7 +61,7 @@
                 }
             }else{
                 console.log("当前你的连接已经断开，请重新连接");
-                location.assign('/login.html');
+                location.replace('/login.html');
             }
         }
 
@@ -71,7 +72,7 @@
             let resp = JSON.parse(e.data);
             if(!resp.ok){
                 console.log("游戏大厅发生错误" + resp.reason);
-                location.assign('/login.html');
+                location.replace('/login.html');
                 return;
             }
             if(resp.message == 'startMatch'){
@@ -82,10 +83,10 @@
                 button.innerHTML = '开始匹配';
             }else if(resp.message == 'MatchSuccess'){
                 console.log("匹配成功，进入游戏界面");
-                location.assign('/game_room.html');
+                location.replace('/game_room.html');
             }else if(resp.message == 'repeatConnection'){
                 alert("检测到当前为多开，请使用其他账号登录");
-                location.assign("/login.html");
+                location.replace("/login.html");
             }else{
                 console.log("非法的message" + resp.message);
             }

@@ -15,7 +15,7 @@
 
 .login-dialog h2{
     text-align: center;
-    padding: 40px 0;
+    padding: 20px 0;
 }
 
 .login-dialog .row{
@@ -56,6 +56,12 @@
     font-size: 20px;
     border-radius: 10px;
     margin-left: 50px;
+}
+
+.register a{
+    align-items: center;
+    margin-left: 50px;
+    text-decoration: none;
 }
 
 #submit:active{

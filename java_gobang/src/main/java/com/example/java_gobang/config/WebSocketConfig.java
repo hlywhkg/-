@@ -38,6 +38,7 @@ public class WebSocketConfig implements WebSocketConfigurer {
         registry.addHandler(matchAPI,"/findMatch").
                 addInterceptors(new HttpSessionHandshakeInterceptor());
 
-        registry.addHandler(gameAPI,"/game");
+        registry.addHandler(gameAPI,"/game").
+                addInterceptors(new HttpSessionHandshakeInterceptor());
     }
 }
