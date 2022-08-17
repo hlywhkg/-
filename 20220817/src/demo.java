@@ -1,4 +1,5 @@
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Deque;
 
@@ -19,6 +20,125 @@ class ListNode {
     }
 }
 
+class Solution8 {
+    public ListNode FindKthToTail (ListNode pHead, int k) {
+        // write code here
+        ListNode slow = pHead,fast = pHead;
+        for(int i = 0; i < k ; i++) {
+            if(fast != null){
+                fast = fast.next;
+            }else{
+                return null;
+            }
+        }
+        while(fast != null){
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
+    }
+}
+
+class Solution7 {
+    //返回有环链表的入口
+    //判断有没有环，返回相遇的地方
+    public ListNode hasCycle(ListNode head) {
+        //先判断链表为空的情况
+        if(head == null)
+            return null;
+        //快慢双指针
+        ListNode fast = head;
+        ListNode slow = head;
+        //如果没环快指针会先到链表尾
+        while(fast != null && fast.next != null){
+            //快指针移动两步
+            fast = fast.next.next;
+            //慢指针移动一步
+            slow = slow.next;
+            //相遇则有环，返回相遇的位置
+            if(fast == slow)
+                return slow;
+        }
+        //到末尾说明没有环，返回null
+        return null;
+    }
+
+    public ListNode EntryNodeOfLoop(ListNode pHead) {
+        ListNode slow = hasCycle(pHead);
+        //没有环
+        if(slow == null)
+            return null;
+        //快指针回到表头
+        ListNode fast = pHead;
+        //再次相遇即是环入口
+        while(fast != slow){
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return slow;
+    }
+}
+
+
+class Solution6 {
+    //判断链表是否有环
+    public boolean hasCycle(ListNode head) {
+        ListNode slow = head,fast = head;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow == fast){
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+class Solution5 {
+    //合并多个有序链表
+    public ListNode mergeKLists(ArrayList<ListNode> lists) {
+        return divide(lists,0,lists.size()-1);
+    }
+    public ListNode divide(ArrayList<ListNode> list, int left,int right){
+        if(left > right){
+            return null;
+        }else if(left == right){
+            return list.get(left);
+        }
+        int mid = (left + right) / 2;
+        return Merge(divide(list,left,mid),divide(list,mid + 1,right));
+    }
+    public ListNode Merge(ListNode list1,ListNode list2){
+        if(list1 == null || list2 == null){
+            return list1 == null ? list2 : list1;
+        }
+        if(list1.val <= list2.val){
+            list1.next = Merge(list1.next,list2);
+            return list1;
+        }else{
+            list2.next = Merge(list1,list2.next);
+            return list2;
+        }
+    }
+}
+
+class Solution4 {
+    //合并两个有序链表
+    public ListNode Merge(ListNode list1,ListNode list2) {
+        if(list1 == null || list2 == null){
+            return list1 == null ? list2 : list1;
+        }
+        if(list1.val <= list2.val){
+            list1.next = Merge(list1.next,list2);
+            return list1;
+        }else{
+            list2.next = Merge(list1,list2.next);
+            return list2;
+        }
+    }
+}
+
 class Solution3 {
     /**
      *
@@ -26,6 +146,7 @@ class Solution3 {
      * @param k int整型
      * @return ListNode类
      */
+    //反转多组链表
     public ListNode reverseKGroup (ListNode head, int k) {
         // write code here
         if(k <= 1 || head == null)return head;
@@ -70,6 +191,7 @@ class Solution3 {
 }
 
 class Solution2 {
+    //反转链表区间
     public ListNode reverseBetween (ListNode _head, int m, int n) {
         // write code here
         ListNode head = new ListNode(-1);
@@ -101,6 +223,7 @@ class Solution2 {
     }
 }
 class Solution1 {
+    //反转链表
     public ListNode ReverseList(ListNode head) {
         ListNode prev = null;
         ListNode next = head;
