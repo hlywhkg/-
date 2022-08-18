@@ -17,6 +17,54 @@ class ListNode {
     ListNode next = null;
 }
 
+class Solution9 {
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     *
+     * @param nums int整型一维数组
+     * @return int整型
+     */
+    public int findPeakElement (int[] nums) {
+        // write code here
+        int left = 0,right = nums.length - 1;
+        while(left < right){
+            int mid = left + (right - left) / 2;
+            if(nums[mid] > nums[right]){
+                right = mid;
+            }else{
+                left = mid + 1;
+            }
+        }
+        return right;
+    }
+}
+
+class Solution8 {
+    /**
+     *
+     * @param _head ListNode类
+     * @return ListNode类
+     */
+    public ListNode deleteDuplicates (ListNode _head) {
+        // write code here
+        ListNode head = new ListNode(-1);
+        head.next = _head;
+        ListNode cur = head;
+        while(cur.next != null && cur.next.next != null){
+            if(cur.next.val == cur.next.next.val){
+                int tmp = cur.next.val;
+                while(cur.next != null && cur.next.val == tmp){
+                    cur.next = cur.next.next;
+                }
+            }else{
+                cur = cur.next;
+            }
+        }
+        return head.next;
+    }
+}
+
 class Solution7 {
     /**
      *
