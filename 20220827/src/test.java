@@ -1,7 +1,5 @@
 import javax.swing.tree.TreeNode;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * @ClassName $申先生
@@ -18,6 +16,51 @@ class BTNode {
       this.val = val;
     }
   }
+
+class Solution {
+    ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+    public ArrayList<ArrayList<Integer> > Print(BTNode root) {
+        Deque<BTNode> d = new ArrayDeque<>();
+        d.addLast(root);
+        while(!d.isEmpty()) {
+            int size = d.size();
+        }
+    }
+
+}
+
+class Solution4 {
+    /**
+     *
+     * @param root TreeNode类
+     * @return int整型ArrayList<ArrayList<>>
+     */
+    ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+    public ArrayList<ArrayList<Integer>> levelOrder (BTNode root) {
+        // write code here
+        Deque<BTNode> d = new ArrayDeque<>();
+        d.addLast(root);
+        dfs(d);
+        return list;
+    }
+    public void dfs(Deque<BTNode> d) {
+        while(!d.isEmpty()){
+            int size = d.size();
+            ArrayList<Integer> tmp = new ArrayList<>();
+            while(size-- > 0) {
+                BTNode ret = d.pollFirst();
+                if(ret.left != null){
+                    d.addLast(ret.left);
+                }
+                if(ret.right != null){
+                    d.addLast(ret.right);
+                }
+                tmp.add(ret.val);
+            }
+            list.add(tmp);
+        }
+    }
+}
 
 class Solution3 {
     /**
