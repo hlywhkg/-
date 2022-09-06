@@ -7,13 +7,66 @@
 
 import java.util.*;
 
+class Solution3 {
+    public int minAddToMakeValid(String s) {
+        Deque<Character> d = new ArrayDeque<>();
+        int count = 0;
+        int need = 0;
+        for(char c: s.toCharArray()){
+            if(c == '('){
+                count++;
+            }else{
+                count--;
+            }
+            if(count < 0){
+                need++;
+                count = 0;
+            }
+        }
+        need += count;
+        return need;
+    }
+}
+
+class Solution2 {
+    List<String> ans = new ArrayList<String>();
+
+    public List<String> letterCasePermutation(String s) {
+        StringBuilder path = new StringBuilder(s);
+        dfs(s, 0, path);
+        return ans;
+    }
+
+    public void dfs(String s, int pos, StringBuilder path) {
+        if (pos == s.length()) {
+            ans.add(path.toString());
+            return;
+        }
+
+        if (Character.isDigit(s.charAt(pos))) {
+            path.setCharAt(pos, s.charAt(pos));
+            dfs(s, pos + 1, path);
+        } else if (Character.isLowerCase(s.charAt(pos))) {
+            path.setCharAt(pos, s.charAt(pos));
+            dfs(s, pos + 1, path);
+            path.setCharAt(pos, Character.toUpperCase(s.charAt(pos)));
+            dfs(s, pos + 1, path);
+        } else {
+            path.setCharAt(pos, s.charAt(pos));
+            dfs(s, pos + 1, path);
+            path.setCharAt(pos, Character.toLowerCase(s.charAt(pos)));
+            dfs(s, pos + 1, path);
+        }
+    }
+}
+
 /**
  * id+1在Logs表中且id+2也在Logs表中
  * select distinct Num as ConsecutiveNums from Logs where (Id+1,Num) in (select * from Logs)
  * and (Id+2,Num) in (select * from Logs);
  */
 
-class Solution {
+class Solution1 {
     public String frequencySort(String s) {
         char[] cnt = s.toCharArray();
         Map<Character,Integer> map = new HashMap<>();
@@ -55,5 +108,8 @@ public class demo1 {
         char a = 'c';
         int[] arr = new int[]{a};//
         System.out.println(Arrays.toString(arr));
+        //冷知识:异或32大小写转换
+        char c = 'a';
+        System.out.println(c^32);
     }
 }
