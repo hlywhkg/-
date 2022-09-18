@@ -17,7 +17,7 @@
         select * from blog where userId = #{userId}
     </select>
 
-
+    <!-- 查询所有博客 -->
     <select id="selectAll" resultType="com.example.demo.model.Blog">
         select * from blog order by postTime desc
     </select>

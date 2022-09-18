@@ -132,7 +132,8 @@
                         console.log("登录成功,欢迎您" + body.username);
                         changeUsername(body.username);
                     }else{
-                        alert("当前处于未登录状态,请先登录");
+                        console.log(body.userId);
+                        alert("[getUserInfo]当前处于未登录状态,请先登录");
                         location.assign("login.html");
                     }
                 },
