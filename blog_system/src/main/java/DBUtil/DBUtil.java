@@ -18,7 +18,7 @@ import java.sql.PreparedStatement;
 public class DBUtil {
     private static final String URL = "jdbc:mysql://127.0.0.1:3306/blog_system?characterEncoding=utf8&useSSL=false";
     private static final String User = "root";
-    private static final String Password = "";
+    private static final String Password = "123456";
     // 加上 volatile 防止编译器对其进行优化。
     private static volatile DataSource dataSource = null;// 数据源对象
     // 创建数据源，描述服务器的所在地址，用户名，以及用户密码

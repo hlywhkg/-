@@ -64,26 +64,31 @@ public class Room {
             return;
         }
 
+        //1.进行落子
         chessBoard[row][col] = chess;
         printBoard();
-        //检查游戏是否结束
+        //2.检查游戏是否结束
         int winner = checkWinner(chess,row,col);
         System.out.println(winner);
+        //3.把响应写回给玩家
         response.setUserId(request.getUserId());
         response.setRow(row);
         response.setCol(col);
         response.setWinner(winner);
+        //4.检查玩家的在线状态
         WebSocketSession session1 = onlineUserManager.getGameRoomSession(user1.getUserId());
         WebSocketSession session2 = onlineUserManager.getGameRoomSession(user2.getUserId());
 
         if(session1 == null){
+            //玩家1掉线，玩家2自动获胜
             response.setWinner(user2.getUserId());
-            System.out.println("玩家2掉线");
+            System.out.println("玩家1掉线");
         }
 
         if(session2 == null){
+            //玩家2掉线，玩家1自动获胜
             response.setWinner(user1.getUserId());
-            System.out.println("玩家1掉线");
+            System.out.println("玩家2掉线");
         }
 
         //传回响应
@@ -95,7 +100,7 @@ public class Room {
             session2.sendMessage(new TextMessage(respJson));
         }
 
-        //已经分出胜负
+        //5.已经分出胜负，销毁房间
         if(response.getWinner() != 0){
             //更新数据
             userMapper.userWin(response.getWinner() == user1.getUserId() ? user1.getUserId() : user2.getUserId());

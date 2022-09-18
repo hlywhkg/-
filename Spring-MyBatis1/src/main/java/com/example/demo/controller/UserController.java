@@ -23,6 +23,8 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
+
     @RequestMapping("/getuserbyid")
     public UserInfo getUserById(Integer id){
         if(id == null)return null;

@@ -133,9 +133,10 @@ public class Match {
                 //防止多开
                 if (session1 == session2){
                     matchQueue.add(user1);
+                    return;
                 }
 
-                //TODO 将两个玩家加入对战房间
+                // 将两个玩家加入对战房间
                 Room room = new Room();
                 roomManager.add(user1.getUserId(),user2.getUserId(),room);
 
@@ -154,7 +155,9 @@ public class Match {
                 e.printStackTrace();
             }
         }
+    }
 
+    private void AI(){
 
     }
 }

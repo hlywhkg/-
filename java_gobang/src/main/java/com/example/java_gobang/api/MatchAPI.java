@@ -31,7 +31,7 @@ public class MatchAPI extends TextWebSocketHandler {
     private Match match;
 
     @Override
-    //处理用户连接
+    //处理用户连接游戏大厅
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
         //session.getAttributes()获取到的是一个map，里面存放了了HttpSession中的getAttribute里的所有对象
         User user = (User) session.getAttributes().get("user");
@@ -60,7 +60,7 @@ public class MatchAPI extends TextWebSocketHandler {
     }
 
     @Override
-    //处理开始/取消匹配
+    //处理玩家开始/取消匹配
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
         User user = (User) session.getAttributes().get("user");
         if(user == null){
@@ -73,12 +73,10 @@ public class MatchAPI extends TextWebSocketHandler {
         MatchResponse response = new MatchResponse();
         if(request.getMessage().equals("startMatch")){
             //加入匹配器中
-            //TODO
             match.add(user);
             response.setMessage("startMatch");
         }else if(request.getMessage().equals("stopMatch")){
             //从匹配器中移除
-            //TODO
             match.remove(user);
             response.setMessage("stopMatch");
         }else{
@@ -97,7 +95,7 @@ public class MatchAPI extends TextWebSocketHandler {
             if(tmpSession == session){
                 onlineUserManager.exitGameHall(user.getUserId());
             }
-            //TODO 从匹配器中移除
+            //从匹配器中移除
             match.remove(user);
             System.out.println("玩家"+ user.getUsername() +"离开游戏大厅");
         }catch (NullPointerException e){
@@ -114,7 +112,7 @@ public class MatchAPI extends TextWebSocketHandler {
             if(tmpSession == session){
                 onlineUserManager.exitGameHall(user.getUserId());
             }
-            //TODO 从匹配器中移除
+            //从匹配器中移除
             match.remove(user);
             System.out.println("玩家"+ user.getUsername() +"离开游戏大厅");
         }catch (NullPointerException e){

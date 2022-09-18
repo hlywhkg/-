@@ -22,7 +22,7 @@
         </div>
     </div>
 
-    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         /* 获取用户信息 */
         $.ajax({
@@ -32,9 +32,10 @@
                 let screen = document.querySelector('#screen');
                 if(data.username == null){
                     alert("当前尚未登录，请先登录!");
-                    location.replace("/login.html");
+                    location.replace("login.html");
                 }
-                screen.innerHTML = '玩家: ' + data.username + ', 分数: ' + data.score + "<br> 比赛场次: " + data.totalCount + ", 获胜场次: " + data.winCount;
+                screen.innerHTML = '玩家: ' + data.username + ', 分数: ' + data.score + "<br> 比赛场次: " 
+                + data.totalCount + ", 获胜场次: " + data.winCount;
             }
         });
 
@@ -61,7 +62,7 @@
                 }
             }else{
                 console.log("当前你的连接已经断开，请重新连接");
-                location.replace('/login.html');
+                location.replace('login.html');
             }
         }
 
@@ -72,7 +73,7 @@
             let resp = JSON.parse(e.data);
             if(!resp.ok){
                 console.log("游戏大厅发生错误" + resp.reason);
-                location.replace('/login.html');
+                location.replace('login.html');
                 return;
             }
             if(resp.message == 'startMatch'){
@@ -83,16 +84,17 @@
                 button.innerHTML = '开始匹配';
             }else if(resp.message == 'MatchSuccess'){
                 console.log("匹配成功，进入游戏界面");
-                location.replace('/game_room.html');
+                location.replace('game_room.html');
             }else if(resp.message == 'repeatConnection'){
                 alert("检测到当前为多开，请使用其他账号登录");
-                location.replace("/login.html");
+                location.replace("login.html");
             }else{
                 console.log("非法的message" + resp.message);
             }
         }
         
-        /* 监听窗口关闭事件，当窗口关闭时，主动断开websocket链接，防止还没断开链接就关闭窗口server报错 */
+        /* 监听窗口关闭事件，当窗口关闭时，主动断开websocket链接，
+        防止还没断开链接就关闭窗口server报错 */
         window.onbeforeunload = function () {
             websocket.close();
         }

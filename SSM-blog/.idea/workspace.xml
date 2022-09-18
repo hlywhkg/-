@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="99a7e275-cc51-4725-92dc-af59ae3e2121" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../20200904/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200904/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200904/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200904/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200904/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200904/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200904/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200904/20200904.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200905/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200905/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200905/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200905/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200905/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200905/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200905/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200905/20200905.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200906/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200906/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200906/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200906/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200906/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200906/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200906/20200906.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200907/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200907/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200907/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200907/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200907/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200907/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20200907/20200907.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220807/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220807/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220807/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220807/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220807/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220807/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220807/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220807/20220807.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220813/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220813/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220813/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220813/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220813/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220813/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220813/20220813.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220814/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220814/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220814/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220814/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220814/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220814/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220814/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220814/20220814.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220815/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220815/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220815/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220815/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220815/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220815/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220815/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220815/20220815.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220815/src/demo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220817/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220817/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220817/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220817/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220817/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220817/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220817/20220817.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220818/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220818/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220818/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220818/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220818/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220818/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220818/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220818/20220818.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220819/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220819/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220819/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220819/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220819/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220819/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220819/20220819.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220824/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220824/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220824/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220824/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220824/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220824/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220824/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220824/20220824.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220827/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220827/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220827/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220827/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220827/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220827/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220827/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220827/20220827.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220831/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220831/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220831/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220831/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220831/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220831/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220831/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220831/20220831.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220901/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220901/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220901/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220901/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220901/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220901/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220901/20220901.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220916/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220916/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220916/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220916/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220916/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220916/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220916/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220916/20220916.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220916/src/demo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220917/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220917/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220917/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220917/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220917/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220917/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220917/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20220917/20220917.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring-3/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring-3/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring-3/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring-3/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring-3/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring-3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring-3/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring-3/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring-3/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring-MyBatis1/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring-MyBatis1/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring-MyBatis1/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring-MyBatis1/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring-MyBatis1/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring-MyBatis1/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring-MyBatis1/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/example/demo/DemoApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/test/java/com/example/demo/DemoApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot/src/main/java/com/example/demo/DemoApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot/src/main/resources/static/hello world.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot/src/test/java/com/example/demo/DemoApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot2/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot2/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot2/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot2/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot2/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot2/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot2/src/main/java/com/example/demo/DemoApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot2/src/main/java/com/example/demo/controller/ReadYml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot2/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot2/src/test/java/com/example/demo/DemoApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Spring_boot3/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java_gobang/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java_gobang/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java_gobang/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java_gobang/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java_gobang/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java_gobang/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java_gobang/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java_gobang/src/main/resources/static/css/common.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java_gobang/src/main/resources/static/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java_gobang/src/main/resources/static/js/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../onlinemusic/src/main/java/com/example/onlinemusic/OnlineMusicApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/src/main/java/com/example/demo/DemoApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/src/test/java/com/example/demo/DemoApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Spring-MyBatis1/src/main/java/com/example/demo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Spring-MyBatis1/src/main/java/com/example/demo/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot1/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot1/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot1/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot1/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot1/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot1/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot1/src/main/java/com/example/demo/DemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot1/src/main/java/com/example/demo/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot1/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot1/src/test/java/com/example/demo/DemoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog_system/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../blog_system/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog_system/src/main/java/DBUtil/DBUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../blog_system/src/main/java/DBUtil/DBUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog_system/src/main/webapp/css/blog-content.css" beforeDir="false" afterPath="$PROJECT_DIR$/../blog_system/src/main/webapp/css/blog-content.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog_system/target/classes/DBUtil/DBUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../blog_system/target/classes/DBUtil/DBUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog_system/target/classes/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../blog_system/target/classes/main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_gobang/src/main/java/com/example/java_gobang/api/MatchAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java_gobang/src/main/java/com/example/java_gobang/api/MatchAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_gobang/src/main/java/com/example/java_gobang/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java_gobang/src/main/java/com/example/java_gobang/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_gobang/src/main/java/com/example/java_gobang/game/GameRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java_gobang/src/main/java/com/example/java_gobang/game/GameRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_gobang/src/main/java/com/example/java_gobang/game/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java_gobang/src/main/java/com/example/java_gobang/game/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_gobang/src/main/java/com/example/java_gobang/game/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java_gobang/src/main/java/com/example/java_gobang/game/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_gobang/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../java_gobang/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_gobang/src/main/resources/static/css/game_hall.css" beforeDir="false" afterPath="$PROJECT_DIR$/../java_gobang/src/main/resources/static/css/game_hall.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_gobang/src/main/resources/static/css/game_room.css" beforeDir="false" afterPath="$PROJECT_DIR$/../java_gobang/src/main/resources/static/css/game_room.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_gobang/src/main/resources/static/game_hall.html" beforeDir="false" afterPath="$PROJECT_DIR$/../java_gobang/src/main/resources/static/game_hall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_gobang/src/main/resources/static/js/common.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_gobang/src/main/resources/static/js/game_hall.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_gobang/src/main/resources/static/js/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_gobang/src/main/resources/static/js/register.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java_gobang/src/main/resources/static/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/../java_gobang/src/main/resources/static/register.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="C:\Users\申金旺\.m2\repository" />
+        <option name="userSettingsFile" value="C:\Users\申金旺\.m2\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2EwfWJtB3Kg6TMeknJ4wP7TSNWe" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="99a7e275-cc51-4725-92dc-af59ae3e2121" name="Changes" comment="" />
+      <created>1663511599355</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1663511599355</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

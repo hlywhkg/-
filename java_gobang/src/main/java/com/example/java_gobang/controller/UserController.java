@@ -56,15 +56,14 @@ public class UserController {
 
     @GetMapping("/userInfo")
     public Object getUserInfo(HttpServletRequest req){
-        HttpSession session = req.getSession(false);
-        if(session == null){
+        try{
+            HttpSession session = req.getSession(false);
+            User user = (User) session.getAttribute("user");
+            //保证用户的分数是数据库中最新的数据
+            User newUser = userMapper.selectByName(user.getUsername());
+            return newUser;
+        }catch (NullPointerException e){
             return new User();
         }
-        User user = (User) session.getAttribute("user");
-        if(user == null){
-            return new User();
-        }
-        User newUser = userMapper.selectByName(user.getUsername());
-        return newUser;
     }
 }

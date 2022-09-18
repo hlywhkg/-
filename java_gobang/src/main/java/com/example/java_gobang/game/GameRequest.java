@@ -10,7 +10,7 @@ import lombok.Data;
 
 @Data
 public class GameRequest {
-    private String message = "pusChess";
+    private String message = "putChess";
     private int userId;
     private int row;
     private int col;
