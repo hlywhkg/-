@@ -1,0 +1,46 @@
+.blog{
+    width: 100%;
+    padding: 20px;
+}
+
+
+.blog .title{
+    /* 文本水平居中 */
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.blog .date{
+    text-align: center;
+    color: rgb(15, 105, 53);
+    padding: 10px;
+}
+
+.blog .content{
+    text-indent: 2em;
+}
+
+.blog a{
+    /* 设置成为块级元素 方便设置边框 */
+    width: 140px;
+    height: 40px;
+    display: block;
+    /* 水平居中 */
+    margin: 10px auto;
+    /* 黑色边框 实线 */
+    border: 2px black solid;
+    text-align: center;
+    /* 垂直居中 */
+    line-height: 40px;
+    text-decoration: none;
+    color: black;
+    /* 渐变效果 a标签 0.5秒 */
+    transition: all 0.5s;
+}
+/* 伪类选择器 控制光标放上去后的效果 */
+.blog a:hover{
+    background-color: #333;
+    color: white;
+}
+

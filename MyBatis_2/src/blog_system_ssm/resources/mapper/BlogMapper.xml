@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.model.BlogMapper">
+
+    <!-- 发布一篇博客 -->
+    <insert id="insert">
+        insert into blog values(null,#{title},#{blog_content},#{userId},now())
+    </insert>
+
+    <!-- 根据博客id查找博客 -->
+    <select id="selectByBlogId" resultType="com.example.demo.model.Blog">
+        select * from blog where blogId = #{blogId}
+    </select>
+
+    <!-- 根据用户id查找该用户所有博客 -->
+    <select id="selectByUserId" resultType="com.example.demo.model.Blog">
+        select * from blog where userId = #{userId}
+    </select>
+
+    <!-- 查询所有博客 -->
+    <select id="selectAll" resultType="com.example.demo.model.Blog">
+        select * from blog order by postTime desc
+    </select>
+
+
+    <!-- 根据博客id删除博客 -->
+    <delete id="deleteByBlogId">
+        delete from blog where blogId = #{blogId}
+    </delete>
+
+
+
+</mapper>
