@@ -27,7 +27,4 @@
     <delete id="deleteByBlogId">
         delete from blog where blogId = #{blogId}
     </delete>
-
-
-
 </mapper>

@@ -7,21 +7,20 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Blog;
+import com.example.demo.model.Register;
 import com.example.demo.model.User;
 import com.example.demo.model.UserMapper;
 import com.example.demo.service.BlogService;
 import com.example.demo.service.UserService;
 import com.example.demo.util.ResultData;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.HashMap;
 
 @RestController
 public class UserController {
@@ -42,7 +41,6 @@ public class UserController {
      */
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public Object login(User user, HttpServletRequest request, HttpServletResponse response) throws IOException {
-        System.out.println("---------------------");
         if(user == null || "".equals(user.getUsername()) || "".equals(user.getPassword())){
             return ResultData.fail("用户尚未登录");
         }
@@ -53,25 +51,25 @@ public class UserController {
         HttpSession session = request.getSession(true);
         session.setAttribute("user",user1);
         response.sendRedirect("blog_list.html");
-        return ResultData.ok(200,"登录成功");
+        return ResultData.ok(200,"ok");
     }
 
     /**
      * 用来验证登录
-     * @param request
      * @return
      */
     @RequestMapping(value = "/login",method = RequestMethod.GET)
-    public Object login(HttpServletRequest request){
-        HttpSession session = request.getSession(false);
-        User user = (User) session.getAttribute("user");
+    public Object login(@SessionAttribute(value = "user")User user){
         user.setPassword("");
         return user;
     }
 
+    /**
+     * 获取博客作者信息
+     * @return
+     */
     @RequestMapping(value = "/authorInfo",method = RequestMethod.GET)
-    public Object getAuthorInfo(HttpServletRequest request){
-        String blogId = request.getParameter("blogId");
+    public Object getAuthorInfo(String blogId){
         if(blogId == null || "".equals(blogId)){
             return ResultData.fail("参数缺失");
         }
@@ -91,6 +89,13 @@ public class UserController {
         return author;
     }
 
+    /**
+     * 注销
+     * @param req
+     * @param resp
+     * @return
+     * @throws IOException
+     */
     @RequestMapping(value = "/logout",method = RequestMethod.GET)
     public Object logOut(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         HttpSession session = req.getSession(false);
@@ -100,6 +105,19 @@ public class UserController {
         session.removeAttribute("user");
         resp.sendRedirect("login.html");
         return ResultData.ok(200,"注销成功");
+    }
+
+    @RequestMapping(value = "/register",method = RequestMethod.POST)
+    public Object userRegister(@RequestBody Register register) throws IOException {
+        User user = userService.selectByName(register.username);
+        if (user != null) {
+            return ResultData.fail("repeat");
+        }
+        User user1 = new User();
+        user1.setUsername(register.username);
+        user1.setPassword(register.password1);
+        userService.insert(user1);
+        return ResultData.ok(200,"ok");
     }
 
 }

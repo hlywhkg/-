@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,20 +33,19 @@ public class BlogController {
 
     /**
      * 获取博客列表
-     * @param request
+     * @param blogId
      * @return
      */
     @RequestMapping(value = "/blog",method = RequestMethod.GET)
-    public Object selectAll(HttpServletRequest request) {
-        String str = request.getParameter("blogId");
-        if (str == null || "".equals(str)) {
+    public Object selectAll(String blogId) {
+        if (blogId == null || "".equals(blogId)) {
             return blogService.selectAll();
         }else{
-            int blogId = Integer.parseInt(str);
-            if(blogId < 1){
+            int blogId1 = Integer.parseInt(blogId);
+            if(blogId1 < 1){
                 return ResultData.fail("blogId异常");
             }
-            Blog blog = blogService.selectByBlogId(blogId);
+            Blog blog = blogService.selectByBlogId(blogId1);
             if(blog == null){
                 return ResultData.fail("不存在当前id的博客");
             }
@@ -57,11 +57,8 @@ public class BlogController {
      * 用来发布博客
      */
     @RequestMapping(value = "/blog",method = RequestMethod.POST)
-    public Object insertBlog(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        HttpSession session = req.getSession(false);
-        User user = (User) session.getAttribute("user");
-        String title = req.getParameter("title");
-        String content = req.getParameter("content");
+    public Object insertBlog(@SessionAttribute(value = "user")User user,String title,
+                             String content,HttpServletResponse resp) throws IOException {
         if(title == null || "".equals(title) || content == null || "".equals(content)){
             return ResultData.fail("参数缺失");
         }
@@ -78,10 +75,8 @@ public class BlogController {
      * 用来删除博客
      */
     @RequestMapping(value = "/blogDel",method = RequestMethod.GET)
-    public Object delByBlogId(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        HttpSession session = request.getSession(false);
-        User user = (User) session.getAttribute("user");
-        String blogId = request.getParameter("blogId");
+    public Object delByBlogId(@SessionAttribute(value = "user")User user,
+                              String blogId,HttpServletResponse response) throws IOException {
         if(blogId == null || "".equals(blogId)){
             return ResultData.fail("参数残缺");
         }

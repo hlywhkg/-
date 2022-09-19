@@ -16,11 +16,14 @@ public class APPConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginIntercept()).
+                //所有路由都拦截
                 addPathPatterns("/**").
+                //不拦截这个后缀的所有文件
                 excludePathPatterns("/**/*.css").
                 excludePathPatterns("/**/*.js").
                 excludePathPatterns("/**/*.png").
                 excludePathPatterns("/**/*.jpg").
+                //登录页和注册页也不用拦截
                 excludePathPatterns("/**/login.html").
                 excludePathPatterns("/**/register.html").
                 excludePathPatterns("/**/login").
