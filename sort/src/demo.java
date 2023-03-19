@@ -1,5 +1,6 @@
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Random;
 
 /**
  * @ClassName $申先生
@@ -12,13 +13,6 @@ import java.util.Arrays;
 
 
 public class demo {
-    public static void main(String[] args) {
-        int[] array = {4,3,2,5,7};
-        //array = sort1(array);
-        //array = sort2(array);
-        array = sort3(array);
-        System.out.println(Arrays.toString(array));
-    }
 
     /**
      *   冒泡排序
@@ -27,9 +21,7 @@ public class demo {
         for(int i = 0 ; i < array.length ; i++) {
             for(int j = 0 ; j < i; j++) {
                 if(array[i] < array[j]) {
-                    int tmp = array[i];
-                    array[i] = array[j];
-                    array[j] = tmp;
+                    swap(array,i,j);
                 }
             }
         }
@@ -86,5 +78,109 @@ public class demo {
             gap /= 2;
         }
         return array;
+    }
+
+    /**
+     *  选择排序
+     *  不稳定
+     *  O(N^2)
+     */
+    public static int[] sort4(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i+1; j < array.length; j++) {
+                int tmp = array[i];
+                if(tmp > array[j]) {
+                    array[i] = array[j];
+                    array[j] = tmp;
+                }
+            }
+        }
+        return array;
+    }
+
+    /**
+     *
+     * 堆排序
+     *
+     */
+    public static int[] sort5(int[] array){
+        //建堆
+        for (int i = (array.length-1-1)/2; i >= 0; i--) {
+            adjust(array,i);
+        }
+        int length = array.length - 1 ;
+        while(length > 0) {
+            swap(array,0,length);
+            //length--;
+            adjust(array,0);
+            length--;
+        }
+        return array;
+    }
+    public static void adjust(int[]array,int parent) {
+        int child = parent * 2 + 1;
+        while(child < array.length) {
+            //找出子节点中较大的一个
+            if(child+1 < array.length && array[child] < array[child+1]) {
+                child += 1;
+            }else {
+                if(array[child] > array[parent]) {
+                    swap(array,child,parent);
+                    parent = child;
+                    child = parent * 2 + 1;
+                }else {
+                    break;
+                }
+            }
+        }
+    }
+
+
+
+
+    public static void test1(int capacity) {
+        int[] array = new int[capacity];
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt();
+        }
+        long begin = System.currentTimeMillis();
+        //sort1(array);
+        sort2(array);
+        //sort3(array);
+        //sort4(array);
+        long end = System.currentTimeMillis();
+        System.out.println(end-begin);
+    }
+    public static void test2(int capacity) {
+        int[] array = new int[capacity];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i;
+        }
+        long begin = System.currentTimeMillis();
+        //sort1(array);
+        sort2(array);
+        //sort3(array);
+        //sort4(array);
+        long end = System.currentTimeMillis();
+        System.out.println(end-begin);
+    }
+
+    public static void swap(int[] arr,int i ,int j) {
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
+    }
+
+    public static void main(String[] args) {
+        int[] array = {4,3,2,5,7};
+        //array = sort1(array);
+        //array = sort2(array);
+        //array = sort3(array);
+        //array = sort4(array);
+        array = sort5(array);
+        System.out.println(Arrays.toString(array));
+        //test1(10_0000);
+        //test2(10_0000);
     }
 }
