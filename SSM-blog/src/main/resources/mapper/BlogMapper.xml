@@ -4,27 +4,37 @@
 
     <!-- 发布一篇博客 -->
     <insert id="insert">
-        insert into blog values(null,#{title},#{blog_content},#{userId},now())
+        insert into blog values(null,#{title},#{blog_content},#{userId},now(),0,0)
     </insert>
 
     <!-- 根据博客id查找博客 -->
-    <select id="selectByBlogId" resultType="com.example.demo.model.Blog">
+    <select id="selectBlogByBlogId" resultType="com.example.demo.model.Blog">
         select * from blog where blogId = #{blogId}
     </select>
 
     <!-- 根据用户id查找该用户所有博客 -->
-    <select id="selectByUserId" resultType="com.example.demo.model.Blog">
-        select * from blog where userId = #{userId}
+     <select id="selectAllBlogByUserId" resultType="com.example.demo.model.Blog">
+        select * from blog where userId = #{userId} order by postTime desc
     </select>
 
     <!-- 查询所有博客 -->
-    <select id="selectAll" resultType="com.example.demo.model.Blog">
+    <select id="selectAllBlogs" resultType="com.example.demo.model.Blog">
         select * from blog order by postTime desc
     </select>
 
-
     <!-- 根据博客id删除博客 -->
-    <delete id="deleteByBlogId">
+    <delete id="delBlogByBlogId">
         delete from blog where blogId = #{blogId}
     </delete>
+
+    <!-- 更新点赞数 -->
+    <update id="updateLike">
+        update blog set count_like = #{liked} where blogId = #{blogId}
+    </update>
+
+    <!-- 更新收藏数 -->
+    <update id="updateFavorite">
+        update blog set count_favorite = #{favorited} where blogId = #{blogId}
+    </update>
+
 </mapper>

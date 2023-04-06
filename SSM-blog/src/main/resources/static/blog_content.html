@@ -8,22 +8,27 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/blog-content.css">
 
-    <!-- 引入 editor.md 的依赖 -->
-    <link rel="stylesheet" href="editor.md/css/editormd.min.css" />
-    <script src="js/jquery.min.js"></script>
-    <script src="editor.md/lib/marked.min.js"></script>
-    <script src="editor.md/lib/prettify.min.js"></script>
-    <script src="editor.md/editormd.js"></script>
-
+     <!-- 引入 editor.md 的依赖 -->
+     <link rel="stylesheet" href="editor.md/css/editormd.min.css" />
+     <script src="js/jquery.min.js"></script>
+     <script src="editor.md/lib/marked.min.js"></script>
+     <script src="editor.md/lib/prettify.min.js"></script>
+     <script src="editor.md/editormd.js"></script>
 </head>
 <body>
     <!--导航栏-->
     <div class="nav">
         <img src="logo.jpg" alt="">
         <span class="title">派大星的小站</span>
-        <span class="spacer"></span>
+        <!-- 占位-占据中间位置 -->
         <a href="blog_list.html">主页</a>
+        <span class="spacer"></span>
+        <!-- 前端目前只使用页面内跳转 -->
+        <a href="blog_person.html">
+            <img src="./1.jpeg">
+        </a>
         <a href="blog_editor.html">写日记</a>
+        <!-- #是暂时不晓得用什么链接时可以使用 -->
         <a href="logout">注销</a>
     </div>
 
@@ -34,9 +39,7 @@
         <div class="left">
             <div class="card">
                 <img src="1.jpeg" alt="">
-                <h3>
-                    
-                </h3>
+                <h3></h3>
                 <a href="#">github链接</a>
                 <div class="counter">
                     <span>文章</span>
@@ -52,7 +55,6 @@
         <!--右侧博客内容详情-->
         <div class="right">
             <div class="blog-content">
-                <!-- 标题 -->
                 <h3>
 
                 </h3>
@@ -63,11 +65,102 @@
 
                 </div>
             </div>
+            <div class="bottom_nav">
+                <span class="authorname">海绵宝宝养的小窝</span>
+                <div class="spacer"></div>
+                <div id="like">
+                    <img src="./like.png" id="like_block" style="display: block">
+                    <img src="./like_active.png" id="like_active" style="display: none;">
+                    <span id="count_like" style="color: rgb(153, 154, 170);"></span>
+                </div>
+                <div id="favorite">
+                    <img src="./favorite.png" id="favorite_block" style="display: block">
+                    <img src="./favorite_active.png" id="favorite_active" style="display: none;">
+                    <span id="count_favorite" style="color: rgb(153, 154, 170);"></span>
+                </div>
+            </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="js/jquery.min.js"></script>
         <script>
+            likeBlog()
+            function likeBlog(){
+                let like = document.getElementById('like');
+                let count_like = document.getElementById('count_like');
+                let params = new URLSearchParams(location.search);
+                let blogId = params.get('blogId');
+                console.log(blogId)
+                like.onclick = function(body) {
+                    console.log(body)
+                    console.log(body.target)
+                    console.log(body.target.id)
+                    let isLike = body.target.id == "like_block" ? false : true;
+                    console.log(isLike)
+                    $.ajax({
+                        type: "post",
+                        url:"/likeBlog",
+                        data: {
+                            blogId: blogId,
+                            isLike: isLike
+                        },
+                        success:function(){
+                            if (count_like.style.color == "rgb(153, 154, 170)") {
+                                count_like.innerHTML++;
+                                document.getElementById("like_block").style.display="none";
+                                document.getElementById("like_active").style.display="block";
+                                count_like.style.color="rgb(252, 85, 49)";
+                                //getIsLike();
+                            } else if (count_like.style.color == "rgb(252, 85, 49)") {
+                                count_like.innerHTML--;
+                                document.getElementById("like_block").style.display="block";
+                                document.getElementById("like_active").style.display="none";
+                                count_like.style.color="rgb(153, 154, 170)";
+                                //getIsLike("false");
+                            }
+                        }
+                    })
+                }
+            }
+
+            favoriteBlog()
+            function favoriteBlog(){
+                let favorite = document.getElementById('favorite');
+                let count_favorite = document.getElementById('count_favorite');
+                let params = new URLSearchParams(location.search);
+                let blogId = params.get('blogId');
+                console.log(blogId)
+                favorite.onclick = function(body) {
+                    console.log(body)
+                    console.log(body.target)
+                    console.log(body.target.id)
+                    let isfavorite = body.target.id == "favorite_block" ? false : true;
+                    console.log(isfavorite)
+                    $.ajax({
+                        type: "post",
+                        url:"/favoriteBlog",
+                        data: {
+                            blogId: blogId,
+                            isLike: isfavorite
+                        },
+                        success:function(){
+                            if (count_favorite.style.color == "rgb(153, 154, 170)") {
+                                count_favorite.innerHTML++;
+                                document.getElementById("favorite_block").style.display="none";
+                                document.getElementById("favorite_active").style.display="block";
+                                count_favorite.style.color="rgb(252, 85, 49)";
+                            } else if (count_favorite.style.color == "rgb(252, 85, 49)") {
+                                count_favorite.innerHTML--;
+                                document.getElementById("favorite_block").style.display="block";
+                                document.getElementById("favorite_active").style.display="none";
+                                count_favorite.style.color="rgb(153, 154, 170)";
+                            }
+                        }
+                    })
+                }
+            }
             /* 获取博客详情 */
             function getBlogcontent(){
+                let params = new URLSearchParams(location.search);
+                let blogId = params.get('blogId');
                 $.ajax({
                     type:"get",
                     url:"blog" + location.search,
@@ -92,8 +185,61 @@
                         editormd.markdownToHTML('content',{
                             markdown: body.blog_content
                         });
+                        let count_like = document.getElementById("count_like");
+                        count_like.innerHTML = body.count_like;
+                        console.log(body.count_like)
+                        getIsLike(blogId);
+                        let count_favorite = document.getElementById("count_favorite");
+                        count_favorite.innerHTML = body.count_favorite;
+                        console.log(body.count_favorite)
+                        getIsfavorite(blogId);
                     }
                 });
+            }
+
+
+            function getIsLike(blogId){
+                console.log()
+                $.ajax({
+                    type: "get" ,
+                    url: "/isLike",
+                    data: {
+                        blogId: blogId
+                    },
+                    success:function(body){
+                        if (body.like) {
+                            document.getElementById("like_block").style.display="none";
+                            document.getElementById("like_active").style.display="block";
+                            count_like.style.color="rgb(252, 85, 49)";
+                        } else if (!body.like) {
+                            document.getElementById("like_block").style.display="block";
+                            document.getElementById("like_active").style.display="none";
+                            count_like.style.color="rgb(153, 154, 170)";
+                        }
+                    }
+                })
+            }
+
+            function getIsfavorite(blogId){
+                console.log()
+                $.ajax({
+                    type: "get" ,
+                    url: "/isFavorite",
+                    data: {
+                        blogId: blogId
+                    },
+                    success:function(body){
+                        if (body.favorite) {
+                            document.getElementById("favorite_block").style.display="none";
+                            document.getElementById("favorite_active").style.display="block";
+                            count_favorite.style.color="rgb(252, 85, 49)";
+                        } else if (!body.favorite) {
+                            document.getElementById("favorite_block").style.display="block";
+                            document.getElementById("favorite_active").style.display="none";
+                            count_favorite.style.color="rgb(153, 154, 170)";
+                        }
+                    }
+                })
             }
             getBlogcontent();
             //获取当前用户是否处于登录状态

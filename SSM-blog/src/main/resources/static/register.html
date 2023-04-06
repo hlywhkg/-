@@ -38,7 +38,7 @@
                 </div>
             </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script>
         let submit = document.querySelector('#submit');
         submit.onclick = function() {
@@ -74,7 +74,7 @@
                 contentType: "application/json;charset=utf-8",
                 success: function(data,status){
                     if(data.message == 'repeat'){
-                        alert("用户名重复,请重新输入");
+                        alert("[register]用户名重复,请重新输入");
                         username.value="";
                         password1.value="";
                         password2.value="";

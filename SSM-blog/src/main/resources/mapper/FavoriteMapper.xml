@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.model.FavoriteMapper">
+    <select id="selectUserId" resultType="com.example.demo.model.FavoriteListUserId">
+        select userId from user_blog_favorite where blogId = #{blogId}
+    </select>
+    <insert id="insert">
+        insert into user_blog_favorite values(#{blogId},#{userId})
+    </insert>
+    <delete id="delete">
+        delete from user_blog_favorite where blogId = #{blogId} and userId = #{userId}
+    </delete>
+
+    <delete id="deleteBlog">
+        delete from user_blog_favorite where blogId = #{blogId}
+    </delete>
+</mapper>

@@ -18,6 +18,10 @@ public class Blog {
     private String blog_content;
     private int userId;
     private Timestamp postTime;
+    //新增博客点赞数
+    private int count_like;
+    //新增博客收藏数
+    private int count_favorite;
 
     public String getPostTime() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

@@ -5,11 +5,11 @@
         insert into user(username,password) values(#{username},#{password});
     </insert>
 
-    <select id="selectById" resultType="com.example.demo.model.User">
+    <select id="selectUserByUserId" resultType="com.example.demo.model.User">
         select * from user where userId = #{userId}
     </select>
 
-    <select id="selectByName" resultType="com.example.demo.model.User">
+    <select id="selectUserByUserName" resultType="com.example.demo.model.User">
         select * from user where username = #{username}
     </select>
 

@@ -15,9 +15,12 @@
         <img src="logo.jpg" alt="">
         <span class="title">派大星的小站</span>
         <!-- 占位-占据中间位置 -->
+        <a href="blog_list.html">主页</a>
         <span class="spacer"></span>
         <!-- 前端目前只使用页面内跳转 -->
-        <a href="blog_list.html">主页</a>
+        <a href="blog_person.html">
+            <img src="./1.jpeg">
+        </a>
         <a href="blog_editor.html">写日记</a>
         <!-- #是暂时不晓得用什么链接时可以使用 -->
         <a href="logout">注销</a>
@@ -47,27 +50,11 @@
 
         <!--右侧内容详情-->
         <div class="right">
-            <!-- 博客展示 -->
-            <!-- <div class="blog">
-                <div class="title">我的第一篇博客</div>
-                <div class="date">2022-07-05</div>
-                <div class="content">
-                    今天开始我要认真写代码Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis sint rerum, vero ea aliquid sunt velit eius est, illo debitis unde quae officiis doloremque minima perferendis eaque ipsum repellendus culpa?
-                </div>
-                <a href="blog_content.html">查看全文 &gt;&gt; </a>
-            </div>
-            <div class="blog">
-                <div class="title">我的第二篇博客</div>
-                <div class="date">2022-07-05</div>
-                <div class="content">
-                    今天开始我要认真写代码Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis sint rerum, vero ea aliquid sunt velit eius est, illo debitis unde quae officiis doloremque minima perferendis eaque ipsum repellendus culpa?
-                </div>
-                <a href="blog_content.html">查看全文 &gt;&gt; </a>
-            </div> -->
+            
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script>
         function getBlogList(){
             $.ajax({

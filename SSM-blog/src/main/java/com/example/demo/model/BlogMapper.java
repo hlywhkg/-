@@ -9,12 +9,15 @@ package com.example.demo.model;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Set;
 
 @Mapper
-public interface BlogMapper {
-    int deleteByBlogId(Integer blogId);
-    Blog selectByBlogId(Integer blogId);
-    List<Blog> selectByUserId(Integer userId);
+public interface  BlogMapper {
+    int delBlogByBlogId(Integer blogId);
+    List<Blog> selectAllBlogByUserId(Integer userId);
     int insert(Blog blog);
-    List<Blog> selectAll();
+    List<Blog> selectAllBlogs();
+    Blog selectBlogByBlogId(Integer blogId);
+    void updateLike(Integer liked,Integer blogId);
+    void updateFavorite(Integer favorited,Integer blogId);
 }
