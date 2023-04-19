@@ -39,6 +39,7 @@ public class UserController {
     public Object register(String username,String password){
         User user = null;
         try {
+            //System.out.println(username+" " + password);
             user = new User();
             user.setUsername(username);
             user.setPassword(password);

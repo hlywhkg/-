@@ -86,6 +86,7 @@ function initGame() {
         }
     }
     let chess = document.querySelector('#chess');
+    //进行2d渲染的对象
     let context = chess.getContext('2d');
     context.strokeStyle = "#BFBFBF";
     // 背景图片
@@ -147,6 +148,7 @@ function initGame() {
         }
     }
 
+
     function send(row, col) {
         let req = {
             message: 'putChess',
@@ -157,6 +159,8 @@ function initGame() {
 
         websocket.send(JSON.stringify(req));
     }
+
+
 
     // 之前 websocket.onmessage 主要是用来处理了游戏就绪响应. 在游戏就绪之后, 初始化完毕之后, 也就不再有这个游戏就绪响应了. 
     // 就在这个 initGame 内部, 修改 websocket.onmessage 方法~~, 让这个方法里面针对落子响应进行处理!
@@ -174,6 +178,7 @@ function initGame() {
             // 我自己落的子
             // 根据我自己子的颜色, 来绘制一个棋子
             oneStep(resp.col, resp.row, gameInfo.isWhite);
+            
         } else if (resp.userId == gameInfo.thatUserId) {
             // 我的对手落的子
             oneStep(resp.col, resp.row, !gameInfo.isWhite);

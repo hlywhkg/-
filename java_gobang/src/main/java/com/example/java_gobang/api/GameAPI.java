@@ -36,7 +36,7 @@ public class GameAPI extends TextWebSocketHandler {
     private UserMapper userMapper;
 
     @Override
-    //处理用户连接房间成功
+    //处理用户连接房间
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
         GameReadyResponse resp = new GameReadyResponse();
         User user = (User) session.getAttributes().get("user");
@@ -120,6 +120,7 @@ public class GameAPI extends TextWebSocketHandler {
         }
         WebSocketSession session1 = onlineUserManager.getGameRoomSession(user.getUserId());
         if(session1 != session){
+            //防止多开情况下,第二个用户退出导致先登录的用户也跟着退出
             System.out.println("当前会话不是游戏中玩家的会话");
             return;
         }

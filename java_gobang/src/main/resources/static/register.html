@@ -36,29 +36,42 @@
         </div>
       </div>
 
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="js/jquery.min.js"></script>
 
       <script>
           let submit = document.querySelector('#submit');
           submit.onclick = function(){
               let username = document.querySelector('#username').value;
               let password = document.querySelector('#password').value;
+              if(username.trim() == ""){
+                alert("请先输入用户名");
+                username.focus();
+                return; 
+              }
+              if(password.trim() == ""){
+                alert("请先输入密码");
+                password.focus();
+                return; 
+              }
               $.ajax({
-                  method:"post",
-                  url:"/register",
-                  data:{
-                      username: username,
-                      password: password
-                  },
-                  success: function(data){
-                      console.log(JSON.stringify(data));
-                    if(data && data.username){
-                        alert("注册成功");
-                        location.assign('login.html');
-                    }else{
-                        alert("注册失败")
-                    }
-                  }
+                     method:"post",
+                     url:"/register",
+                     data:{
+                           username: username,
+                           password: password
+                     },
+                     success: function(body){
+                           console.log(JSON.stringify(body));
+                           console.log(body.username);
+                           console.log(body.password);
+                           if(body && body.username){
+                                  alert("注册成功");
+                                  location.assign('login.html');
+                           }else{
+                                  alert("注册失败")
+                           }
+                     }
+
               })
           }
       </script>
