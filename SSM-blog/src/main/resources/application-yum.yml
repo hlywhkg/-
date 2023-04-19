@@ -4,6 +4,22 @@ spring:
     username: root
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    password: 111
+    cluster:
+      max-redirects: 3
+      nodes: 1.117.78.84:6379,1.117.78.84:6380,1.117.78.84:6381,1.117.78.84:6382,1.117.78.84:6383,1.117.78.84:6384
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        min-idle: 0
+      cluster:
+        refresh:
+          adaptive: true
+          period: 2000
 
 mybatis:
   mapper-locations: classpath:mapper/**Mapper.xml
+server:
+  port: 8081

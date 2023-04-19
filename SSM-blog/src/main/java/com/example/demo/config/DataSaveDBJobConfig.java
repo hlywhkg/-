@@ -9,6 +9,7 @@ package com.example.demo.config;
 import com.example.demo.controller.FavoriteController;
 import com.example.demo.controller.LikeController;
 import com.example.demo.model.*;
+import org.omg.CORBA.DynAnyPackage.InvalidValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -17,10 +18,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @Author Zhongger
